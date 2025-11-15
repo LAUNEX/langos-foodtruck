@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lángos uff Tour - Authentische ungarische Lángos</title>
+    <meta name="description" content="Frische, handgemachte Lángos direkt vom Foodtruck. Authentisch ungarisch, modern serviert.">
+    <link rel="stylesheet" href="css/style-modern.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🇭🇺 Lángos uff Tour</h1>
+            </div>
+            <nav class="nav">
+                <a href="#menu">Menü</a>
+                <div class="hours-dropdown">
+                    <a href="#" id="hoursDropdownToggle">Öffnungszeiten</a>
+                    <div class="hours-dropdown-menu" id="hoursDropdownMenu">
+                        <div class="hours-dropdown-item">
+                            <strong>Mo - Fr</strong>
+                            <span>11:00 - 20:00</span>
+                        </div>
+                        <div class="hours-dropdown-item">
+                            <strong>Sa - So</strong>
+                            <span>12:00 - 21:00</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Flag Container with expandable sections -->
+    <div class="flag-container">
+        <!-- Hero Section - RED -->
+        <section class="hero flag-section">
+            <div class="container-full">
+                <div class="hero-content animate-fade-in">
+                    <h2 class="hero-title">Authentische Lángos</h2>
+                    <p class="hero-subtitle">Frisch zubereitet • Knusprig • Ungarisch</p>
+                    <div class="hero-status">
+                        <span class="status-badge status-open">Heute geöffnet</span>
+                        <span class="status-time">11:00 - 20:00 Uhr</span>
+                    </div>
+                    <p class="hero-location">📍 Bahnhofplatz St. Gallen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section - WHITE -->
+        <section id="menu" class="menu-section flag-section">
+            <div class="container-full">
+                <h2 class="section-title scroll-reveal">Unsere Lángos</h2>
+                <p class="section-subtitle scroll-reveal">Frisch zubereitet mit hochwertigen Zutaten</p>
+                
+                <!-- Herzhafte Lángos -->
+                <h3 class="menu-category scroll-reveal">🧄 Herzhafte Lángos</h3>
+                <div class="menu-grid">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item scroll-reveal">
+                        <div class="menu-item-header">
+                            <h3>Lángos Klassisch</h3>
+                            <span class="price">CHF 9.00</span>
+                        </div>
+                        <p class="menu-description">Mit Salz & Knoblauch</p>
+                        <p class="menu-details-text">Der klassische ungarische Lángos - knusprig frittiert, mit aromatischem Knoblauch und einer Prise Salz. Perfekt für Puristen!</p>
+                    </div>
+
+                    <!-- Menu Item 2 -->
+                    <div class="menu-item scroll-reveal">
+                        <div class="menu-item-header">
+                            <h3>Lángos mit Sauerrahm & Käse</h3>
+                            <span class="price">CHF 10.00</span>
+                        </div>
+                        <p class="menu-description">Knoblauch, Sauerrahm & Käse</p>
+                        <p class="menu-details-text">Die beliebteste Variante! Knoblauch-Lángos mit cremigem Sauerrahm und herzhaftem geriebenem Käse. Ein Geschmackserlebnis!</p>
+                    </div>
+
+                    <!-- Menu Item 3 -->
+                    <div class="menu-item scroll-reveal menu-item-special">
+                        <div class="menu-item-header">
+                            <h3>Swiss Special 🇨🇭</h3>
+                            <span class="price">CHF 12.50</span>
+                        </div>
+                        <p class="menu-description">Knoblauch, Sauerrahm, Appenzeller, Speck, Schnittlauch</p>
+                        <p class="menu-details-text">Unsere Schweizer Interpretation! Verfeinert mit würzigem Appenzeller Käse, knusprigem Speck und frischem Schnittlauch. Ein kulinarisches Highlight!</p>
+                    </div>
+
+                    <!-- Menu Item 4 -->
+                    <div class="menu-item scroll-reveal">
+                        <div class="menu-item-header">
+                            <h3>Lángos Deluxe</h3>
+                            <span class="price">CHF 11.00</span>
+                        </div>
+                        <p class="menu-description">Knoblauch, Käse, Sauerrahm & Schinken</p>
+                        <p class="menu-details-text">Für Feinschmecker! Reichhaltig belegt mit Knoblauch, Käse, Sauerrahm und herzhaftem Schinken. Macht garantiert satt!</p>
+                    </div>
+                </div>
+
+                <!-- Süße Lángos -->
+                <h3 class="menu-category scroll-reveal">🍰 Süße Lángos</h3>
+                <div class="menu-grid">
+                    <!-- Menu Item 5 -->
+                    <div class="menu-item scroll-reveal">
+                        <div class="menu-item-header">
+                            <h3>Lángos mit Bio Marille</h3>
+                            <span class="price">CHF 9.00</span>
+                        </div>
+                        <p class="menu-description">Mit fruchtiger Marillen-Marmelade</p>
+                        <p class="menu-details-text">Warmer Lángos mit hausgemachter Bio-Marillen-Marmelade. Die perfekte süße Alternative!</p>
+                    </div>
+
+                    <!-- Menu Item 6 -->
+                    <div class="menu-item scroll-reveal">
+                        <div class="menu-item-header">
+                            <h3>Lángos mit Bio Pflaume</h3>
+                            <span class="price">CHF 8.00</span>
+                        </div>
+                        <p class="menu-description">Mit aromatischer Pflaumen-Marmelade</p>
+                        <p class="menu-details-text">Knuspriger Lángos trifft auf süß-säuerliche Bio-Pflaumen-Marmelade. Ein herbstlicher Genuss!</p>
+                    </div>
+
+                    <!-- Menu Item 7 -->
+                    <div class="menu-item scroll-reveal">
+                        <div class="menu-item-header">
+                            <h3>Lángos Schoko-Nuss</h3>
+                            <span class="price">CHF 9.00</span>
+                        </div>
+                        <p class="menu-description">Mit Haselnuss-Nougat Creme & Kakao</p>
+                        <p class="menu-details-text">Für Schoko-Liebhaber! Großzügig bestrichen mit cremiger Haselnuss-Nougat Creme und bestäubt mit feinem Kakao.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drinks Section - GREEN -->
+        <section id="getraenke" class="drinks-section flag-section">
+            <div class="container-full">
+                <h2 class="section-title scroll-reveal">🥤 Getränke</h2>
+                <p class="section-subtitle scroll-reveal">Eisgekühlt & erfrischend</p>
+                
+                <div class="drinks-grid">
+                    <div class="drink-card scroll-reveal">
+                        <div class="drink-icon">🥤</div>
+                        <h3>Coca-Cola</h3>
+                        <p class="drink-price">CHF 3.50</p>
+                    </div>
+                    
+                    <div class="drink-card scroll-reveal">
+                        <div class="drink-icon">🍊</div>
+                        <h3>Fanta</h3>
+                        <p class="drink-price">CHF 3.50</p>
+                    </div>
+                    
+                    <div class="drink-card scroll-reveal">
+                        <div class="drink-icon">💚</div>
+                        <h3>Sprite</h3>
+                        <p class="drink-price">CHF 3.50</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating Contact Sidebar -->
+    <aside class="contact-floating">
+        <h3>Kontakt</h3>
+        <div class="contact-floating-items">
+            <a href="tel:+41791234567" class="contact-floating-item">
+                <span class="contact-floating-icon">📞</span>
+                <span class="contact-floating-text">Anrufen</span>
+            </a>
+            <a href="https://wa.me/41791234567" target="_blank" class="contact-floating-item">
+                <span class="contact-floating-icon">💬</span>
+                <span class="contact-floating-text">WhatsApp</span>
+            </a>
+            <a href="https://instagram.com/langos_uff_tour" target="_blank" class="contact-floating-item">
+                <span class="contact-floating-icon">📱</span>
+                <span class="contact-floating-text">Instagram</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Lángos uff Tour - Alle Rechte vorbehalten</p>
+            <div class="footer-links">
+                <a href="#impressum">Impressum</a>
+                <a href="#datenschutz">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
