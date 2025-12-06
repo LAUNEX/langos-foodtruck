@@ -129,6 +129,10 @@
                 <p class="section-description">
                     Frisch zubereitet nach traditionellem ungarischem Rezept mit hochwertigen Zutaten
                 </p>
+                <button class="allergen-btn" id="allergenBtn">
+                    <span class="allergen-btn-icon">ⓘ</span>
+                    <span>Allergene & Inhaltsstoffe</span>
+                </button>
             </div>
 
             <!-- Herzhafte Lángos -->
@@ -438,6 +442,99 @@
     </footer>
 
     </div><!-- .page-wrapper -->
+
+    <!-- Allergene Modal -->
+    <div class="modal-overlay" id="allergenModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2 class="modal-title">Allergene & Inhaltsstoffe</h2>
+
+            <div class="allergen-section">
+                <h3>Allgemeine Informationen</h3>
+                <ul class="allergen-list">
+                    <li><span class="allergen-badge gluten">Gluten</span> Unser Lángos-Teig enthält <strong>Weizenmehl</strong></li>
+                    <li><span class="allergen-badge milk">Milch</span> Sauerrahm und Käse enthalten <strong>Milch und Laktose</strong></li>
+                    <li><span class="allergen-badge egg">Ei</span> Unser Teig enthält <strong>Eier</strong></li>
+                </ul>
+            </div>
+
+            <div class="allergen-section">
+                <h3>Unsere Zutaten</h3>
+                <ul class="ingredient-list">
+                    <li><strong>Salz:</strong> Jodfreies Meersalz</li>
+                    <li><strong>Öl:</strong> Hochwertiges Sonnenblumenöl zum Frittieren</li>
+                    <li><strong>Knoblauch:</strong> Frischer Knoblauch</li>
+                    <li><strong>Käse:</strong> Geriebener Gouda (Kuhmilch)</li>
+                    <li><strong>Appenzeller:</strong> Original Appenzeller Käse (Kuhmilch)</li>
+                    <li><strong>Sauerrahm:</strong> Sauerrahm mit 15% Fett (Kuhmilch)</li>
+                    <li><strong>Speck:</strong> Schweizer Speck (Schweinefleisch)</li>
+                </ul>
+            </div>
+
+            <div class="allergen-section">
+                <h3>Süsse Lángos</h3>
+                <ul class="ingredient-list">
+                    <li><strong>Marillen-Marmelade:</strong> Bio-Marillen, Zucker, Geliermittel Pektin</li>
+                    <li><strong>Pflaumen-Marmelade:</strong> Bio-Pflaumen, Zucker, Geliermittel Pektin</li>
+                    <li><strong>Haselnuss-Nougat Creme:</strong> Enthält <span class="allergen-badge nuts">Haselnüsse</span> und <span class="allergen-badge milk">Milch</span></li>
+                    <li><strong>Kakao:</strong> Reiner Kakaopuder, ungesüsst</li>
+                </ul>
+            </div>
+
+            <div class="allergen-section">
+                <h3>Allergene-Legende</h3>
+                <div class="legend-grid">
+                    <div class="legend-item"><span class="allergen-badge gluten">A</span> Glutenhaltiges Getreide</div>
+                    <div class="legend-item"><span class="allergen-badge egg">B</span> Eier</div>
+                    <div class="legend-item"><span class="allergen-badge milk">C</span> Milch/Laktose</div>
+                    <div class="legend-item"><span class="allergen-badge nuts">H</span> Schalenfrüchte (Nüsse)</div>
+                </div>
+            </div>
+
+            <div class="allergen-section">
+                <h3>Allergene pro Produkt</h3>
+                <table class="allergen-table">
+                    <thead>
+                        <tr>
+                            <th>Produkt</th>
+                            <th>Allergene</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lángos Natur</td>
+                            <td><span class="allergen-badge gluten">A</span> <span class="allergen-badge egg">B</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sauerrahm & Käse</td>
+                            <td><span class="allergen-badge gluten">A</span> <span class="allergen-badge egg">B</span> <span class="allergen-badge milk">C</span></td>
+                        </tr>
+                        <tr>
+                            <td>Swiss Special</td>
+                            <td><span class="allergen-badge gluten">A</span> <span class="allergen-badge egg">B</span> <span class="allergen-badge milk">C</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bio Marille</td>
+                            <td><span class="allergen-badge gluten">A</span> <span class="allergen-badge egg">B</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bio Pflaume</td>
+                            <td><span class="allergen-badge gluten">A</span> <span class="allergen-badge egg">B</span></td>
+                        </tr>
+                        <tr>
+                            <td>Schoko-Nuss</td>
+                            <td><span class="allergen-badge gluten">A</span> <span class="allergen-badge egg">B</span> <span class="allergen-badge milk">C</span> <span class="allergen-badge nuts">H</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="allergen-note">
+                <p><strong>Hinweis:</strong> Alle unsere Produkte werden in derselben Küche zubereitet. Kreuzkontaminationen mit anderen Allergenen können daher nicht vollständig ausgeschlossen werden. Bei Fragen zu Allergenen sprechen Sie uns bitte direkt an.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>

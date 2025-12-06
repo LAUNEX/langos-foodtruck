@@ -257,4 +257,50 @@
         init();
     }
 
+    // ============================================
+    // Allergen Modal
+    // ============================================
+    function initAllergenModal() {
+        const allergenBtn = document.getElementById('allergenBtn');
+        const allergenModal = document.getElementById('allergenModal');
+        const modalClose = document.getElementById('modalClose');
+
+        if (!allergenBtn || !allergenModal) return;
+
+        // Open modal
+        allergenBtn.addEventListener('click', () => {
+            allergenModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close modal with X button
+        modalClose.addEventListener('click', () => {
+            allergenModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close modal when clicking outside
+        allergenModal.addEventListener('click', (e) => {
+            if (e.target === allergenModal) {
+                allergenModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && allergenModal.classList.contains('active')) {
+                allergenModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Initialize allergen modal when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAllergenModal);
+    } else {
+        initAllergenModal();
+    }
+
 })();
