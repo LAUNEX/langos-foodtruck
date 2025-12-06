@@ -1401,10 +1401,9 @@ body.menu-open .logo-text span {
 }
 
 .footer-social-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
 }
 
 /* ============================================
