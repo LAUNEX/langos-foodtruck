@@ -258,49 +258,105 @@
     }
 
     // ============================================
-    // Allergen Modal
+    // Allergen Info Popups
     // ============================================
-    function initAllergenModal() {
-        const allergenBtn = document.getElementById('allergenBtn');
-        const allergenModal = document.getElementById('allergenModal');
-        const modalClose = document.getElementById('modalClose');
+    function initAllergenPopups() {
+        const allergenButtons = document.querySelectorAll('.allergen-info-btn');
 
-        if (!allergenBtn || !allergenModal) return;
+        // Allergen data mapping
+        const allergenInfo = {
+            'A': { code: 'A', name: 'Gluten', class: 'gluten' },
+            'B': { code: 'B', name: 'Ei', class: 'egg' },
+            'C': { code: 'C', name: 'Milch', class: 'milk' },
+            'H': { code: 'H', name: 'Nüsse', class: 'nuts' }
+        };
 
-        // Open modal
-        allergenBtn.addEventListener('click', () => {
-            allergenModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        let activePopup = null;
+
+        function handleAllergenClick(btn, e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const product = btn.dataset.product;
+            const allergens = btn.dataset.allergens.split(',');
+
+            // Close existing popup if clicking same button
+            if (activePopup && activePopup.parentElement === btn.parentElement) {
+                activePopup.remove();
+                activePopup = null;
+                return;
+            }
+
+            // Close existing popup if any
+            if (activePopup) {
+                activePopup.remove();
+                activePopup = null;
+            }
+
+            // Create popup
+            const popup = document.createElement('div');
+            popup.className = 'allergen-popup';
+
+            // Create badges HTML
+            const badgesHtml = allergens.map(code => {
+                const info = allergenInfo[code];
+                return `<span class="allergen-badge ${info.class}">${info.code}</span>`;
+            }).join('');
+
+            // Create legend text
+            const legendText = allergens.map(code => {
+                const info = allergenInfo[code];
+                return `${info.code} = ${info.name}`;
+            }).join(', ');
+
+            popup.innerHTML = `
+                <div class="allergen-popup-title">${product}</div>
+                <div class="allergen-popup-badges">${badgesHtml}</div>
+                <div class="allergen-popup-legend">${legendText}</div>
+            `;
+
+            // Append to footer
+            btn.parentElement.appendChild(popup);
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                popup.classList.add('active');
+            });
+
+            activePopup = popup;
+        }
+
+        allergenButtons.forEach(btn => {
+            // Handle both click and touch
+            btn.addEventListener('click', (e) => handleAllergenClick(btn, e));
+            btn.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                handleAllergenClick(btn, e);
+            });
         });
 
-        // Close modal with X button
-        modalClose.addEventListener('click', () => {
-            allergenModal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Close modal when clicking outside
-        allergenModal.addEventListener('click', (e) => {
-            if (e.target === allergenModal) {
-                allergenModal.classList.remove('active');
-                document.body.style.overflow = '';
+        // Close popup when clicking outside
+        document.addEventListener('click', () => {
+            if (activePopup) {
+                activePopup.remove();
+                activePopup = null;
             }
         });
 
-        // Close modal with Escape key
+        // Close popup with Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && allergenModal.classList.contains('active')) {
-                allergenModal.classList.remove('active');
-                document.body.style.overflow = '';
+            if (e.key === 'Escape' && activePopup) {
+                activePopup.remove();
+                activePopup = null;
             }
         });
     }
 
-    // Initialize allergen modal when DOM is ready
+    // Initialize allergen popups when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAllergenModal);
+        document.addEventListener('DOMContentLoaded', initAllergenPopups);
     } else {
-        initAllergenModal();
+        initAllergenPopups();
     }
 
 })();
