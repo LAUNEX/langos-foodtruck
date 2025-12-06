@@ -15,15 +15,12 @@ jobs:
       uses: actions/checkout@v3
     
     - name: 🚀 SFTP Deploy
-  uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-  with:
-    username: ${{ secrets.FTP_USERNAME }}
-    server: ${{ secrets.FTP_SERVER }}
-    port: 5544
-    password: ${{ secrets.FTP_PASSWORD }}
-    local_path: './'
-    remote_path: '/langos.li/public_html'
-    sftp_only: true
-    sftpArgs: '-o StrictHostKeyChecking=no'
-    delete_remote_files: false
-
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        port: 5544
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /langos.li/public_html/
+        protocol: sftp
