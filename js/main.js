@@ -129,6 +129,7 @@
                     closeMobileMenu();
 
                     const headerHeight = elements.header.offsetHeight;
+                    const isMobile = window.innerWidth < 992;
                     let scrollTarget = section;
 
                     // For menu section, scroll to the crest image
@@ -141,16 +142,26 @@
                         const badge = section.querySelector('.section-badge');
                         if (badge) scrollTarget = badge;
                     }
-                    // For location section, scroll to the section badge
+                    // For location section, scroll to the location card on mobile
                     else if (href === '#location') {
-                        const badge = section.querySelector('.section-badge');
-                        if (badge) scrollTarget = badge;
+                        const locationCard = section.querySelector('.location-card');
+                        if (locationCard) scrollTarget = locationCard;
                     }
 
-                    // On mobile, use less offset for better positioning
-                    const isMobile = window.innerWidth < 992;
-                    const extraOffset = isMobile ? 10 : 20;
-                    const targetPosition = scrollTarget.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraOffset;
+                    // Calculate offset - for location on mobile, scroll to show full card
+                    let extraOffset = isMobile ? 10 : 20;
+                    let targetPosition = scrollTarget.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraOffset;
+
+                    // For location on mobile, scroll to bottom of card to show it fully
+                    if (href === '#location' && isMobile) {
+                        const locationCard = section.querySelector('.location-card');
+                        if (locationCard) {
+                            const cardHeight = locationCard.offsetHeight;
+                            const viewportHeight = window.innerHeight;
+                            // Position card at top of viewport (below header)
+                            targetPosition = locationCard.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                        }
+                    }
 
                     window.scrollTo({
                         top: targetPosition,
