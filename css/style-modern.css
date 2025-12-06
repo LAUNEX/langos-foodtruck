@@ -13,13 +13,13 @@
     --color-primary-dark: #9B1B30;
     --color-primary-light: #E63950;
 
-    --color-cream: #FFF8F0;
+    --color-cream: #fae1c3;
     --color-cream-dark: #F5EBE0;
 
     --color-dark: #1A1A1A;
     --color-dark-light: #2D2D2D;
 
-    --color-white: #FFFFFF;
+    --color-white: #fcefde;
     --color-black: #000000;
 
     --color-gold: #D4A574;
@@ -1340,7 +1340,7 @@ body.menu-open {
 
 /* Placeholder for hero background */
 .hero-bg-placeholder {
-    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary-dark) 100%);
+    background: linear-gradient(135deg, #3D2B1F 0%, #d9b486 100%);
 }
 
 /* Special highlight */
