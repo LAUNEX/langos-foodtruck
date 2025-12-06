@@ -660,7 +660,7 @@ body.menu-open .logo-text span {
 }
 
 .section-dark {
-    background: var(--color-dark);
+    background: linear-gradient(135deg, #3D2B1F 0%, #d9b486 100%);
     color: var(--color-white);
 }
 
@@ -880,7 +880,7 @@ body.menu-open .logo-text span {
 
 /* Fixed height container for icons/images */
 .drink-icon-wrapper {
-    height: 240px;
+    height: 144px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -910,6 +910,107 @@ body.menu-open .logo-text span {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--color-gold);
+}
+
+/* Drinks row - 3 items per row */
+.drinks-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.drinks-row > .drink-card {
+    height: 100%;
+    min-height: 280px;
+}
+
+@media (max-width: 768px) {
+    .drinks-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .drinks-row {
+        grid-template-columns: 1fr;
+    }
+
+    .drinks-row > .drink-card {
+        min-height: 260px;
+    }
+}
+
+/* Vertical layout: 70% top (image+text), 30% bottom (price) */
+.drink-card-vertical {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    min-height: 280px;
+    height: 100%;
+}
+
+.drink-card-top {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: var(--space-md);
+    padding-bottom: var(--space-lg);
+    gap: var(--space-xs);
+    width: 100%;
+}
+
+.drink-card-top .drink-icon-img {
+    height: 140px;
+    width: 140px;
+    object-fit: contain;
+}
+
+.drink-card-top .drink-card-title {
+    margin-bottom: 0;
+}
+
+.drink-card-top .drink-card-desc {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.drink-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    width: 100%;
+    padding: var(--space-md);
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.drink-card-bottom .drink-card-price {
+    font-size: 1.3rem;
+}
+
+/* Hot drinks - larger images */
+.drink-card-hot {
+    min-height: 320px;
+}
+
+.drink-img-hot {
+    width: 220px;
+    height: 220px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+}
+
+/* Description text for drinks */
+.drink-card-desc {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.3;
 }
 
 /* ============================================
