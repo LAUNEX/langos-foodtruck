@@ -14,13 +14,12 @@ jobs:
     - name: 📥 Checkout Code
       uses: actions/checkout@v3
     
-    - name: 🚀 Deploy via SFTP
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+    - name: 🚀 SFTP Deploy
+      uses: Creepios/sftp-action@v1.0.5
       with:
-        username: ${{ secrets.FTP_USERNAME }}
-        server: ${{ secrets.FTP_SERVER }}
+        host: ${{ secrets.FTP_SERVER }}
         port: 5544
+        username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local_path: './*'
-        remote_path: '/public_html'
-        sftp_only: true
+        localPath: './'
+        remotePath: '/public_html/'
