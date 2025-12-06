@@ -21,6 +21,6 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         port: 5544
         password: ${{ secrets.FTP_PASSWORD }}
-        local_path: './*'
+        local_path: './'
         remote_path: '/langos.li/public_html'
         sftp_only: true
