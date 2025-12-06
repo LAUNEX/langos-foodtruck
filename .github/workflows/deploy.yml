@@ -14,13 +14,14 @@ jobs:
     - name: 📥 Checkout Code
       uses: actions/checkout@v3
     
-    - name: 🚀 SFTP Deploy
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+    - name: 📤 SFTP Deploy
+      uses: pressidium/lftp-mirror-action@v1
       with:
-        username: ${{ secrets.FTP_USERNAME }}
-        server: ${{ secrets.FTP_SERVER }}
+        host: ${{ secrets.FTP_SERVER }}
         port: 5544
-        password: ${{ secrets.FTP_PASSWORD }}
-        local_path: './'
-        remote_path: '/langos.li/public_html/'
-        sftp_only: true
+        user: ${{ secrets.FTP_USERNAME }}
+        pass: ${{ secrets.FTP_PASSWORD }}
+        localDir: './'
+        remoteDir: '/langos.li/public_html/'
+        options: '--exclude ^\.git/'
+        protocol: sftp
