@@ -194,7 +194,7 @@
                         <img src="images/langos-marille.jpeg" alt="Lángos mit Bio Marillen-Marmelade">
                     </div>
                     <div class="menu-card-content">
-                        <span class="menu-card-category">Süß</span>
+                        <span class="menu-card-category">Süss</span>
                         <h3 class="menu-card-title">Bio Marille</h3>
                         <p class="menu-card-description">
                             Warmer Lángos mit hausgemachter Bio-Marillen-Marmelade.
@@ -212,10 +212,10 @@
                         <img src="images/langos-pflaume.jpeg" alt="Lángos mit Bio Pflaumen-Marmelade">
                     </div>
                     <div class="menu-card-content">
-                        <span class="menu-card-category">Süß</span>
+                        <span class="menu-card-category">Süss</span>
                         <h3 class="menu-card-title">Bio Pflaume</h3>
                         <p class="menu-card-description">
-                            Süß-säuerliche Bio-Pflaumen-Marmelade auf knusprigem Lángos.
+                            Süss-säuerliche Bio-Pflaumen-Marmelade auf knusprigem Lángos.
                         </p>
                         <div class="menu-card-footer">
                             <span class="menu-card-price">CHF 8.–</span>
@@ -230,7 +230,7 @@
                         <img src="images/langos-schoko.jpeg" alt="Lángos mit Haselnuss-Nougat Creme">
                     </div>
                     <div class="menu-card-content">
-                        <span class="menu-card-category">Süß</span>
+                        <span class="menu-card-category">Süss</span>
                         <h3 class="menu-card-title">Schoko-Nuss</h3>
                         <p class="menu-card-description">
                             Cremige Haselnuss-Nougat Creme, bestäubt mit feinem Kakao.
@@ -260,7 +260,7 @@
                     </p>
                     <p class="about-text">
                         Wir verwenden nur hochwertige Zutaten und bereiten jeden Lángos frisch vor
-                        deinen Augen zu. Knusprig von außen, fluffig von innen – so muss ein
+                        deinen Augen zu. Knusprig von aussen, fluffig von innen – so muss ein
                         echter Lángos sein.
                     </p>
 
@@ -304,7 +304,7 @@
                 <span class="section-badge">Getränke</span>
                 <h2 class="section-title">Dazu <em>passend</em></h2>
                 <p class="section-description">
-                    Kalt oder heiß – die perfekte Ergänzung zu deinem Lángos
+                    Kalt oder heiss – die perfekte Ergänzung zu deinem Lángos
                 </p>
             </div>
 
@@ -334,7 +334,7 @@
                     <span class="drink-card-price">CHF 3.50</span>
                 </div>
 
-                <!-- Heißgetränke -->
+                <!-- Heissgetränke -->
                 <div class="drink-card fade-up">
                     <div class="drink-icon-wrapper">
                         <span class="drink-icon">☕</span>
@@ -369,28 +369,28 @@
                 <span class="section-badge">Standort</span>
                 <h2 class="section-title">Besuch <em>uns</em></h2>
                 <p class="section-description">
-                    Finde uns am Bahnhofplatz in Vaduz
+                    Besuche uns am Weihnachtsmarkt im Vaduzer Städtle
                 </p>
             </div>
 
             <div class="location-card fade-up">
-                <div class="location-icon">🚚</div>
-                <h3 class="location-title">Lángos uf Tour</h3>
-                <p class="location-address">Bahnhofplatz, 9490 Vaduz</p>
+                <div class="location-icon">🎄</div>
+                <h3 class="location-title">Weihnachtsmarkt Vaduz</h3>
+                <p class="location-address">Vaduzer Städtle, Stand H</p>
 
                 <div class="location-hours">
                     <div class="location-hours-title">Öffnungszeiten</div>
                     <div class="location-hours-item">
-                        <span>Montag - Freitag</span>
-                        <span>11:00 - 20:00</span>
+                        <span>Samstag, 13.12.2025</span>
+                        <span>08:00 - 22:00</span>
                     </div>
                     <div class="location-hours-item">
-                        <span>Samstag - Sonntag</span>
-                        <span>12:00 - 21:00</span>
+                        <span>Sonntag, 14.12.2025</span>
+                        <span>08:00 - 22:00</span>
                     </div>
                 </div>
 
-                <a href="https://maps.google.com/?q=Bahnhofplatz+Vaduz" target="_blank" rel="noopener" class="btn-primary">
+                <a href="https://maps.google.com/?q=Städtle+Vaduz" target="_blank" rel="noopener" class="btn-primary">
                     <span>📍</span>
                     <span>Route planen</span>
                 </a>
@@ -436,12 +436,53 @@
                 <p class="footer-text">© 2025 Lángos uf Tour. Alle Rechte vorbehalten.</p>
 
                 <div class="footer-links">
-                    <a href="#impressum" class="footer-link">Impressum</a>
-                    <a href="#datenschutz" class="footer-link">Datenschutz</a>
+                    <button class="footer-link" id="impressumBtn">Impressum</button>
+                    <button class="footer-link" id="datenschutzBtn">Datenschutz</button>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Impressum Modal -->
+    <div class="modal-overlay" id="impressumModal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Schliessen">&times;</button>
+            <h2 class="modal-title">Impressum</h2>
+            <div class="modal-body">
+                <p><strong>LAUNEX CORP. ESTABLISHMENT</strong></p>
+                <p>Matschils 23<br>9495 Triesen<br>Liechtenstein</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Datenschutz Modal -->
+    <div class="modal-overlay" id="datenschutzModal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Schliessen">&times;</button>
+            <h2 class="modal-title">Datenschutzerklärung</h2>
+            <div class="modal-body">
+                <h3>1. Allgemeines</h3>
+                <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf unserer Website.</p>
+
+                <h3>2. Keine Erhebung personenbezogener Daten</h3>
+                <p>Wir erheben, speichern und verarbeiten keine personenbezogenen Daten über diese Website. Es werden keine Cookies gesetzt, keine Tracking-Dienste verwendet und keine Formulardaten erfasst.</p>
+
+                <h3>3. Server-Logs</h3>
+                <p>Beim Besuch unserer Website werden durch den Hosting-Anbieter automatisch technische Zugriffsdaten (Server-Logs) erfasst. Diese umfassen die IP-Adresse, Datum und Uhrzeit des Zugriffs sowie die aufgerufene Seite. Diese Daten werden ausschliesslich zur Sicherstellung des technischen Betriebs verwendet und nach kurzer Zeit automatisch gelöscht. Eine Zuordnung zu einzelnen Personen erfolgt nicht.</p>
+
+                <h3>4. Externe Links</h3>
+                <p>Unsere Website enthält Links zu externen Diensten (Google Maps, Instagram, WhatsApp). Für die Datenschutzpraktiken dieser Drittanbieter sind deren jeweilige Datenschutzerklärungen massgeblich.</p>
+
+                <h3>5. Ihre Rechte</h3>
+                <p>Da wir keine personenbezogenen Daten speichern, entfallen die üblichen Betroffenenrechte (Auskunft, Berichtigung, Löschung). Bei Fragen können Sie uns jederzeit kontaktieren.</p>
+
+                <h3>6. Kontakt</h3>
+                <p>LAUNEX CORP. ESTABLISHMENT<br>Matschils 23, 9495 Triesen</p>
+
+                <p class="modal-date">Stand: Dezember 2025</p>
+            </div>
+        </div>
+    </div>
 
     </div><!-- .page-wrapper -->
 

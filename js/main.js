@@ -38,7 +38,7 @@
 
         elements.mobileMenuBtn.setAttribute(
             'aria-label',
-            state.isMenuOpen ? 'Menü schließen' : 'Menü öffnen'
+            state.isMenuOpen ? 'Menü schliessen' : 'Menü öffnen'
         );
     }
 
@@ -271,6 +271,7 @@
             'H': { code: 'H', name: 'Nüsse', class: 'nuts' }
         };
 
+
         let activePopup = null;
 
         function handleAllergenClick(btn, e) {
@@ -357,6 +358,69 @@
         document.addEventListener('DOMContentLoaded', initAllergenPopups);
     } else {
         initAllergenPopups();
+    }
+
+    // ============================================
+    // Modal Popups (Impressum / Datenschutz)
+    // ============================================
+    function initModals() {
+        const impressumBtn = document.getElementById('impressumBtn');
+        const datenschutzBtn = document.getElementById('datenschutzBtn');
+        const impressumModal = document.getElementById('impressumModal');
+        const datenschutzModal = document.getElementById('datenschutzModal');
+
+        function openModal(modal) {
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal(modal) {
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        function closeAllModals() {
+            [impressumModal, datenschutzModal].forEach(modal => {
+                if (modal) closeModal(modal);
+            });
+        }
+
+        // Open modals
+        if (impressumBtn && impressumModal) {
+            impressumBtn.addEventListener('click', () => openModal(impressumModal));
+        }
+        if (datenschutzBtn && datenschutzModal) {
+            datenschutzBtn.addEventListener('click', () => openModal(datenschutzModal));
+        }
+
+        // Close on X button
+        document.querySelectorAll('.modal-close').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = btn.closest('.modal-overlay');
+                if (modal) closeModal(modal);
+            });
+        });
+
+        // Close on overlay click
+        [impressumModal, datenschutzModal].forEach(modal => {
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal(modal);
+                });
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAllModals();
+        });
+    }
+
+    // Initialize modals when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initModals);
+    } else {
+        initModals();
     }
 
 })();
