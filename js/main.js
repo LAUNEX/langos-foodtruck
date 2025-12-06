@@ -434,4 +434,73 @@
         initModals();
     }
 
+    // ============================================
+    // Menu Toggle (Weihnachtsspecial) - Fade Effect
+    // ============================================
+    function initMenuToggle() {
+        const toggleBtn = document.getElementById('menuToggleBtn');
+        const toggleContainer = document.getElementById('menuToggleContainer');
+        const toggleBtnText = toggleBtn?.querySelector('.btn-toggle-text');
+        const menuSection = document.getElementById('menu');
+        const menuTitleHighlight = document.getElementById('menuTitleHighlight');
+        const menuDescription = document.getElementById('menuDescription');
+
+        if (!toggleBtn || !toggleContainer) return;
+
+        const langosDescription = 'Frisch zubereitet nach traditionellem ungarischem Rezept mit hochwertigen Zutaten';
+        const specialDescription = 'Mit feinster belgischer Schokolade übergossen – purer Genuss...';
+
+        let isShowingSpecial = false;
+
+        // Helper function to scroll to menu section (like header nav)
+        function scrollToMenuSection() {
+            const headerHeight = document.getElementById('header')?.offsetHeight || 80;
+            const crest = menuSection?.querySelector('.section-crest');
+            const scrollTarget = crest || menuSection;
+
+            if (scrollTarget) {
+                const targetPosition = scrollTarget.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            isShowingSpecial = !isShowingSpecial;
+
+            // Toggle state
+            toggleContainer.classList.toggle('show-special', isShowingSpecial);
+            toggleBtn.classList.toggle('active', isShowingSpecial);
+
+            // Update button text
+            if (toggleBtnText) {
+                toggleBtnText.textContent = isShowingSpecial ? 'Zurück zum Menü' : 'Weihnachtsspecial';
+            }
+
+            // Update section title
+            if (menuTitleHighlight) {
+                menuTitleHighlight.textContent = isShowingSpecial ? 'Früchtespiesse' : 'Lángos';
+            }
+
+            // Update section description
+            if (menuDescription) {
+                menuDescription.textContent = isShowingSpecial ? specialDescription : langosDescription;
+            }
+
+            // Scroll after fade transition
+            setTimeout(() => {
+                scrollToMenuSection();
+            }, 150);
+        });
+    }
+
+    // Initialize menu toggle when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMenuToggle);
+    } else {
+        initMenuToggle();
+    }
+
 })();

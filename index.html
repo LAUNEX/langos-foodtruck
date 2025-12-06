@@ -125,122 +125,197 @@
             <div class="section-header fade-up">
                 <img src="images/hun_cimer.png" alt="Ungarisches Wappen" class="section-crest">
                 <span class="section-badge">Speisekarte</span>
-                <h2 class="section-title">Unsere <em>Lángos</em></h2>
-                <p class="section-description">
+                <h2 class="section-title" id="menuTitle">Unsere <em id="menuTitleHighlight">Lángos</em></h2>
+                <p class="section-description" id="menuDescription">
                     Frisch zubereitet nach traditionellem ungarischem Rezept mit hochwertigen Zutaten
                 </p>
                 </div>
 
-            <!-- Herzhafte Lángos -->
-            <div class="menu-grid stagger">
-                <!-- Lángos Natur -->
-                <article class="menu-card fade-up">
-                    <div class="menu-card-image">
-                        <img src="images/langos-natur.jpeg" alt="Lángos Natur mit Knoblauch und Meersalz">
-                    </div>
-                    <div class="menu-card-content">
-                        <span class="menu-card-category">Klassisch</span>
-                        <h3 class="menu-card-title">Lángos Natur</h3>
-                        <p class="menu-card-description">
-                            Der Klassiker - knusprig frittiert mit aromatischem Knoblauch und Meersalz.
-                        </p>
-                        <div class="menu-card-footer">
-                            <span class="menu-card-price">CHF 8.–</span>
-                            <button class="allergen-info-btn" data-product="Lángos Natur" data-allergens="A,B" aria-label="Allergene anzeigen">ⓘ</button>
-                        </div>
-                    </div>
-                </article>
+            <!-- Toggle Container für Menü -->
+            <div class="menu-toggle-container" id="menuToggleContainer">
+                <!-- Lángos Menü -->
+                <div class="menu-toggle-front">
+                    <div class="menu-grid stagger">
+                            <!-- Lángos Natur -->
+                            <article class="menu-card fade-up">
+                                <div class="menu-card-image">
+                                    <img src="images/langos-natur.jpeg" alt="Lángos Natur mit Knoblauch und Meersalz">
+                                </div>
+                                <div class="menu-card-content">
+                                    <span class="menu-card-category">Klassisch</span>
+                                    <h3 class="menu-card-title">Lángos Natur</h3>
+                                    <p class="menu-card-description">
+                                        Der Klassiker - knusprig frittiert mit aromatischem Knoblauch und Meersalz.
+                                    </p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">CHF 8.–</span>
+                                        <button class="allergen-info-btn" data-product="Lángos Natur" data-allergens="A,B" aria-label="Allergene anzeigen">ⓘ</button>
+                                    </div>
+                                </div>
+                            </article>
 
-                <!-- Sauerrahm & Käse -->
-                <article class="menu-card fade-up">
-                    <div class="menu-card-image">
-                        <div class="menu-card-badge">Bestseller</div>
-                        <img src="images/langos-sauerrahm-kaese.jpeg" alt="Lángos mit Sauerrahm und Käse">
-                    </div>
-                    <div class="menu-card-content">
-                        <span class="menu-card-category">Beliebt</span>
-                        <h3 class="menu-card-title">Sauerrahm & Käse</h3>
-                        <p class="menu-card-description">
-                            Cremiger Sauerrahm und herzhafter Käse auf knusprigem Knoblauch-Lángos.
-                        </p>
-                        <div class="menu-card-footer">
-                            <span class="menu-card-price">CHF 11.–</span>
-                            <button class="allergen-info-btn" data-product="Sauerrahm & Käse" data-allergens="A,B,C" aria-label="Allergene anzeigen">ⓘ</button>
-                        </div>
-                    </div>
-                </article>
+                            <!-- Sauerrahm & Käse -->
+                            <article class="menu-card fade-up">
+                                <div class="menu-card-image">
+                                    <div class="menu-card-badge">Bestseller</div>
+                                    <img src="images/langos-sauerrahm-kaese.jpeg" alt="Lángos mit Sauerrahm und Käse">
+                                </div>
+                                <div class="menu-card-content">
+                                    <span class="menu-card-category">Beliebt</span>
+                                    <h3 class="menu-card-title">Sauerrahm & Käse</h3>
+                                    <p class="menu-card-description">
+                                        Cremiger Sauerrahm und herzhafter Käse auf knusprigem Knoblauch-Lángos.
+                                    </p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">CHF 11.–</span>
+                                        <button class="allergen-info-btn" data-product="Sauerrahm & Käse" data-allergens="A,B,C" aria-label="Allergene anzeigen">ⓘ</button>
+                                    </div>
+                                </div>
+                            </article>
 
-                <!-- Swiss Special -->
-                <article class="menu-card fade-up">
-                    <div class="menu-card-image">
-                        <img src="images/langos-swiss-special.jpeg" alt="Swiss Special Lángos mit Appenzeller und Speck">
-                    </div>
-                    <div class="menu-card-content">
-                        <span class="menu-card-category">🇨🇭 Special</span>
-                        <h3 class="menu-card-title">Swiss Special</h3>
-                        <p class="menu-card-description">
-                            Appenzeller Käse, knuspriger Speck, Sauerrahm und frischer Schnittlauch.
-                        </p>
-                        <div class="menu-card-footer">
-                            <span class="menu-card-price">CHF 13.–</span>
-                            <button class="allergen-info-btn" data-product="Swiss Special" data-allergens="A,B,C" aria-label="Allergene anzeigen">ⓘ</button>
-                        </div>
-                    </div>
-                </article>
+                            <!-- Swiss Special -->
+                            <article class="menu-card fade-up">
+                                <div class="menu-card-image">
+                                    <img src="images/langos-swiss-special.jpeg" alt="Swiss Special Lángos mit Appenzeller und Speck">
+                                </div>
+                                <div class="menu-card-content">
+                                    <span class="menu-card-category">🇨🇭 Special</span>
+                                    <h3 class="menu-card-title">Swiss Special</h3>
+                                    <p class="menu-card-description">
+                                        Appenzeller Käse, knuspriger Speck, Sauerrahm und frischer Schnittlauch.
+                                    </p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">CHF 13.–</span>
+                                        <button class="allergen-info-btn" data-product="Swiss Special" data-allergens="A,B,C" aria-label="Allergene anzeigen">ⓘ</button>
+                                    </div>
+                                </div>
+                            </article>
 
-                <!-- Bio Marille -->
-                <article class="menu-card fade-up">
-                    <div class="menu-card-image">
-                        <img src="images/langos-marille.jpeg" alt="Lángos mit Bio Marillen-Marmelade">
-                    </div>
-                    <div class="menu-card-content">
-                        <span class="menu-card-category">Süss</span>
-                        <h3 class="menu-card-title">Bio Marille</h3>
-                        <p class="menu-card-description">
-                            Warmer Lángos mit hausgemachter Bio-Marillen-Marmelade.
-                        </p>
-                        <div class="menu-card-footer">
-                            <span class="menu-card-price">CHF 10.–</span>
-                            <button class="allergen-info-btn" data-product="Bio Marille" data-allergens="A,B" aria-label="Allergene anzeigen">ⓘ</button>
-                        </div>
-                    </div>
-                </article>
+                            <!-- Bio Marille -->
+                            <article class="menu-card fade-up">
+                                <div class="menu-card-image">
+                                    <img src="images/langos-marille.jpeg" alt="Lángos mit Bio Marillen-Marmelade">
+                                </div>
+                                <div class="menu-card-content">
+                                    <span class="menu-card-category">Süss</span>
+                                    <h3 class="menu-card-title">Bio Marille</h3>
+                                    <p class="menu-card-description">
+                                        Warmer Lángos mit hausgemachter Bio-Marillen-Marmelade.
+                                    </p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">CHF 10.–</span>
+                                        <button class="allergen-info-btn" data-product="Bio Marille" data-allergens="A,B" aria-label="Allergene anzeigen">ⓘ</button>
+                                    </div>
+                                </div>
+                            </article>
 
-                <!-- Bio Pflaume -->
-                <article class="menu-card fade-up">
-                    <div class="menu-card-image">
-                        <img src="images/langos-pflaume.jpeg" alt="Lángos mit Bio Pflaumen-Marmelade">
-                    </div>
-                    <div class="menu-card-content">
-                        <span class="menu-card-category">Süss</span>
-                        <h3 class="menu-card-title">Bio Pflaume</h3>
-                        <p class="menu-card-description">
-                            Süss-säuerliche Bio-Pflaumen-Marmelade auf knusprigem Lángos.
-                        </p>
-                        <div class="menu-card-footer">
-                            <span class="menu-card-price">CHF 10.–</span>
-                            <button class="allergen-info-btn" data-product="Bio Pflaume" data-allergens="A,B" aria-label="Allergene anzeigen">ⓘ</button>
-                        </div>
-                    </div>
-                </article>
+                            <!-- Bio Pflaume -->
+                            <article class="menu-card fade-up">
+                                <div class="menu-card-image">
+                                    <img src="images/langos-pflaume.jpeg" alt="Lángos mit Bio Pflaumen-Marmelade">
+                                </div>
+                                <div class="menu-card-content">
+                                    <span class="menu-card-category">Süss</span>
+                                    <h3 class="menu-card-title">Bio Pflaume</h3>
+                                    <p class="menu-card-description">
+                                        Süss-säuerliche Bio-Pflaumen-Marmelade auf knusprigem Lángos.
+                                    </p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">CHF 10.–</span>
+                                        <button class="allergen-info-btn" data-product="Bio Pflaume" data-allergens="A,B" aria-label="Allergene anzeigen">ⓘ</button>
+                                    </div>
+                                </div>
+                            </article>
 
-                <!-- Bio Schoko-Nuss -->
-                <article class="menu-card fade-up">
-                    <div class="menu-card-image">
-                        <img src="images/langos-schoko.jpeg" alt="Bio Lángos mit Haselnuss-Nougat Creme">
-                    </div>
-                    <div class="menu-card-content">
-                        <span class="menu-card-category">Süss</span>
-                        <h3 class="menu-card-title">Bio Schoko-Nuss</h3>
-                        <p class="menu-card-description">
-                            Cremige Haselnuss-Nougat Creme, bestäubt mit feinem Puderzucker.
-                        </p>
-                        <div class="menu-card-footer">
-                            <span class="menu-card-price">CHF 10.–</span>
-                            <button class="allergen-info-btn" data-product="Bio Schoko-Nuss" data-allergens="A,B,C,H" aria-label="Allergene anzeigen">ⓘ</button>
+                            <!-- Bio Schoko-Nuss -->
+                            <article class="menu-card fade-up">
+                                <div class="menu-card-image">
+                                    <img src="images/langos-schoko.jpeg" alt="Bio Lángos mit Haselnuss-Nougat Creme">
+                                </div>
+                                <div class="menu-card-content">
+                                    <span class="menu-card-category">Süss</span>
+                                    <h3 class="menu-card-title">Bio Schoko-Nuss</h3>
+                                    <p class="menu-card-description">
+                                        Cremige Haselnuss-Nougat Creme, bestäubt mit feinem Puderzucker.
+                                    </p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">CHF 10.–</span>
+                                        <button class="allergen-info-btn" data-product="Bio Schoko-Nuss" data-allergens="A,B,C,H" aria-label="Allergene anzeigen">ⓘ</button>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
+                </div>
+
+                <!-- Früchtespiesse (Weihnachtsspecial) -->
+                <div class="menu-toggle-back" id="fruchtspiesseGrid">
+                    <div class="menu-grid menu-grid-3">
+                            <!-- Bananen-Trauben-Spiess (links) -->
+                            <article class="menu-card">
+                                <div class="menu-card-image">
+                                    <div class="menu-card-badge">Weihnachtsspecial</div>
+                                    <img src="images/bannane_traube.jpeg" alt="Bananen-Trauben-Spiess mit belgischer Schokolade">
+                                </div>
+                                <div class="menu-card-content">
+                                    <span class="menu-card-category">Süss</span>
+                                    <h3 class="menu-card-title">Bananen-Trauben-Spiess</h3>
+                                    <p class="menu-card-description">
+                                        Banane und Trauben am Spiess, getaucht in feinste belgische Schokolade.
+                                    </p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">CHF 8.–</span>
+                                        <button class="allergen-info-btn" data-product="Bananen-Trauben-Spiess" data-allergens="H" aria-label="Allergene anzeigen">ⓘ</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Erdbeerspiess (mitte) -->
+                            <article class="menu-card">
+                                <div class="menu-card-image">
+                                    <div class="menu-card-badge">Weihnachtsspecial</div>
+                                    <img src="images/erdbeer.jpeg" alt="Erdbeerspiess mit belgischer Schokolade">
+                                </div>
+                                <div class="menu-card-content">
+                                    <span class="menu-card-category">Süss</span>
+                                    <h3 class="menu-card-title">Erdbeerspiess</h3>
+                                    <p class="menu-card-description">
+                                        Saftige Erdbeeren am Spiess, übergossen mit feinster belgischer Schokolade.
+                                    </p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">CHF 10.–</span>
+                                        <button class="allergen-info-btn" data-product="Erdbeerspiess" data-allergens="H" aria-label="Allergene anzeigen">ⓘ</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Erdbeer-Trauben-Spiess (rechts) -->
+                            <article class="menu-card">
+                                <div class="menu-card-image">
+                                    <div class="menu-card-badge">Weihnachtsspecial</div>
+                                    <img src="images/erdbeer_traube.jpeg" alt="Erdbeer-Trauben-Spiess mit belgischer Schokolade">
+                                </div>
+                                <div class="menu-card-content">
+                                    <span class="menu-card-category">Süss</span>
+                                    <h3 class="menu-card-title">Erdbeer-Trauben-Spiess</h3>
+                                    <p class="menu-card-description">
+                                        Erdbeeren und Trauben vereint, umhüllt von belgischer Schokolade.
+                                    </p>
+                                    <div class="menu-card-footer">
+                                        <span class="menu-card-price">CHF 9.–</span>
+                                        <button class="allergen-info-btn" data-product="Erdbeer-Trauben-Spiess" data-allergens="H" aria-label="Allergene anzeigen">ⓘ</button>
+                                    </div>
+                                </div>
+                            </article>
                     </div>
-                </article>
+                </div>
+            </div>
+
+            <!-- Weihnachtsspecial Button -->
+            <div class="menu-toggle-btn-wrapper">
+                <button class="btn-primary btn-toggle-menu" id="menuToggleBtn">
+                    <span class="btn-toggle-text">Weihnachtsspecial</span>
+                    <span class="btn-toggle-icon">→</span>
+                </button>
             </div>
         </div>
     </section>
