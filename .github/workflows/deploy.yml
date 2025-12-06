@@ -1,4 +1,4 @@
-name: Deploy to Hoststar FTP
+name: Deploy to Hoststar SFTP
 
 on:
   push:
@@ -7,23 +7,20 @@ on:
 
 jobs:
   deploy:
-    name: 🚀 Deploy to FTP
+    name: 🚀 Deploy to SFTP
     runs-on: ubuntu-latest
     
     steps:
     - name: 📥 Checkout Code
       uses: actions/checkout@v3
     
-    - name: 🚀 Deploy via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+    - name: 🚀 Deploy via SFTP
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
+        server: ${{ secrets.FTP_SERVER }}
+        port: 5544
         password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        server-dir: /public_html/
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/.DS_Store
+        local_path: './*'
+        remote_path: '/public_html'
+        sftp_only: true
