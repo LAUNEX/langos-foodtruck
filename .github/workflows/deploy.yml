@@ -15,20 +15,12 @@ jobs:
       uses: actions/checkout@v3
     
     - name: 🚀 SFTP Deploy
-      uses: shimataro/ssh-key-action@v2
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        known_hosts: unnecessary
-        if_key_exists: replace
-        
-    - name: 📤 Upload via SFTP
-      run: |
-        sshpass -p "${{ secrets.FTP_PASSWORD }}" sftp -o StrictHostKeyChecking=no -P 5544 ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} << 'EOF'
-        cd /langos.li/public_html
-        put -r css
-        put -r js
-        put -r images
-        put -r symbole
-        put index.html
-        put README.md
-        EOF
+        username: ${{ secrets.FTP_USERNAME }}
+        server: ${{ secrets.FTP_SERVER }}
+        port: 5544
+        password: ${{ secrets.FTP_PASSWORD }}
+        local_path: './'
+        remote_path: '/langos.li/public_html/'
+        sftp_only: true
