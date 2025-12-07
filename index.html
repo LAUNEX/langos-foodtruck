@@ -31,10 +31,10 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="nav-desktop">
-                    <a href="#menu" class="nav-link">Menü</a>
-                    <a href="#about" class="nav-link">Über uns</a>
-                    <a href="#drinks" class="nav-link">Getränke</a>
-                    <a href="#location" class="nav-link">Standort</a>
+                    <a href="#menu" class="nav-link" data-de="Menü" data-en="Menu">Menü</a>
+                    <a href="#about" class="nav-link" data-de="Über uns" data-en="About">Über uns</a>
+                    <a href="#drinks" class="nav-link" data-de="Getränke" data-en="Drinks">Getränke</a>
+                    <a href="#location" class="nav-link" data-de="Standort" data-en="Location">Standort</a>
                     <!-- Telefon temporär ausgeblendet
                     <a href="tel:+41791234567" class="btn-cta">
                         <span>📞</span>
@@ -42,6 +42,12 @@
                     </a>
                     -->
                 </nav>
+
+                <!-- Language Toggle -->
+                <div class="lang-toggle" id="langToggle">
+                    <button class="lang-btn active" data-lang="de">DE</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
 
                 <!-- Mobile Menu Button -->
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü öffnen">
@@ -58,10 +64,10 @@
     <!-- Mobile Navigation -->
     <nav class="nav-mobile" id="navMobile">
         <div class="nav-mobile-links">
-            <a href="#menu" class="nav-mobile-link">Menü</a>
-            <a href="#about" class="nav-mobile-link">Über uns</a>
-            <a href="#drinks" class="nav-mobile-link">Getränke</a>
-            <a href="#location" class="nav-mobile-link">Standort</a>
+            <a href="#menu" class="nav-mobile-link" data-de="Menü" data-en="Menu">Menü</a>
+            <a href="#about" class="nav-mobile-link" data-de="Über uns" data-en="About">Über uns</a>
+            <a href="#drinks" class="nav-mobile-link" data-de="Getränke" data-en="Drinks">Getränke</a>
+            <a href="#location" class="nav-mobile-link" data-de="Standort" data-en="Location">Standort</a>
             <!-- Telefon temporär ausgeblendet
             <a href="tel:+41791234567" class="nav-mobile-link">Anrufen</a>
             -->
@@ -85,34 +91,40 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
+            <!-- Mobile Language Toggle -->
+            <div class="lang-toggle lang-toggle-hero">
+                <button class="lang-btn active" data-lang="de">DE</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+
             <div class="hero-badge">
                 <span>🇭🇺</span>
-                <span>Authentisch Ungarisch</span>
+                <span data-de="Authentisch Ungarisch" data-en="Authentic Hungarian">Authentisch Ungarisch</span>
             </div>
 
             <h1 class="hero-title">
                 Magyar<br><em>Lángos</em>
             </h1>
 
-            <p class="hero-subtitle">
+            <p class="hero-subtitle" data-de="Knusprig frittiert, frisch zubereitet, mit Liebe serviert.<br>Erlebe den Geschmack Ungarns in Vaduz." data-en="Crispy fried, freshly prepared, served with love.<br>Experience the taste of Hungary in Vaduz.">
                 Knusprig frittiert, frisch zubereitet, mit Liebe serviert.<br>
                 Erlebe den Geschmack Ungarns in Vaduz.
             </p>
 
             <div class="hero-cta">
                 <a href="#menu" class="btn-primary">
-                    <span>Menü entdecken</span>
+                    <span data-de="Menü entdecken" data-en="Discover Menu">Menü entdecken</span>
                     <span>→</span>
                 </a>
                 <a href="#location" class="btn-secondary">
                     <span>📍</span>
-                    <span>Uns finden</span>
+                    <span data-de="Uns finden" data-en="Find Us">Uns finden</span>
                 </a>
             </div>
         </div>
 
         <div class="hero-scroll">
-            <span>Scroll</span>
+            <span data-de="Scroll" data-en="Scroll">Scroll</span>
             <div class="hero-scroll-icon"></div>
         </div>
     </section>
@@ -121,13 +133,13 @@
     <div class="marquee">
         <div class="marquee-content">
             <span class="marquee-item">No Stress Just Lángos</span>
-            <span class="marquee-item">Frisch & Knusprig</span>
-            <span class="marquee-item">Authentisch Ungarisch</span>
-            <span class="marquee-item">Handgemacht mit Liebe</span>
+            <span class="marquee-item" data-de="Frisch & Knusprig" data-en="Fresh & Crispy">Frisch & Knusprig</span>
+            <span class="marquee-item" data-de="Authentisch Ungarisch" data-en="Authentic Hungarian">Authentisch Ungarisch</span>
+            <span class="marquee-item" data-de="Handgemacht mit Liebe" data-en="Handmade with Love">Handgemacht mit Liebe</span>
             <span class="marquee-item">No Stress Just Lángos</span>
-            <span class="marquee-item">Frisch & Knusprig</span>
-            <span class="marquee-item">Authentisch Ungarisch</span>
-            <span class="marquee-item">Handgemacht mit Liebe</span>
+            <span class="marquee-item" data-de="Frisch & Knusprig" data-en="Fresh & Crispy">Frisch & Knusprig</span>
+            <span class="marquee-item" data-de="Authentisch Ungarisch" data-en="Authentic Hungarian">Authentisch Ungarisch</span>
+            <span class="marquee-item" data-de="Handgemacht mit Liebe" data-en="Handmade with Love">Handgemacht mit Liebe</span>
         </div>
     </div>
 
@@ -136,9 +148,9 @@
         <div class="container">
             <div class="section-header fade-up">
                 <img src="images/hun_cimer.png" alt="Ungarisches Wappen" class="section-crest">
-                <span class="section-badge">Speisekarte</span>
-                <h2 class="section-title" id="menuTitle">Unsere <em id="menuTitleHighlight">Lángos</em></h2>
-                <p class="section-description" id="menuDescription">
+                <span class="section-badge" data-de="Speisekarte" data-en="Menu">Speisekarte</span>
+                <h2 class="section-title" id="menuTitle"><span data-de="Unsere" data-en="Our">Unsere</span> <em id="menuTitleHighlight">Lángos</em></h2>
+                <p class="section-description" id="menuDescription" data-de="Frisch zubereitet nach traditionellem ungarischem Rezept mit hochwertigen Zutaten" data-en="Freshly prepared according to traditional Hungarian recipe with premium ingredients">
                     Frisch zubereitet nach traditionellem ungarischem Rezept mit hochwertigen Zutaten
                 </p>
                 </div>
@@ -154,9 +166,9 @@
                                     <img src="images/langos-natur.jpeg" alt="Lángos Natur mit Knoblauch und Meersalz">
                                 </div>
                                 <div class="menu-card-content">
-                                    <span class="menu-card-category">Klassisch</span>
+                                    <span class="menu-card-category" data-de="Klassisch" data-en="Classic">Klassisch</span>
                                     <h3 class="menu-card-title">Lángos Natur</h3>
-                                    <p class="menu-card-description">
+                                    <p class="menu-card-description" data-de="Der Klassiker - knusprig frittiert mit aromatischem Knoblauch und Meersalz." data-en="The classic - crispy fried with aromatic garlic and sea salt.">
                                         Der Klassiker - knusprig frittiert mit aromatischem Knoblauch und Meersalz.
                                     </p>
                                     <div class="menu-card-footer">
@@ -169,13 +181,13 @@
                             <!-- Sauerrahm & Käse -->
                             <article class="menu-card fade-up">
                                 <div class="menu-card-image">
-                                    <div class="menu-card-badge">Bestseller</div>
+                                    <div class="menu-card-badge" data-de="Bestseller" data-en="Bestseller">Bestseller</div>
                                     <img src="images/langos-sauerrahm-kaese.jpeg" alt="Lángos mit Sauerrahm und Käse">
                                 </div>
                                 <div class="menu-card-content">
-                                    <span class="menu-card-category">Beliebt</span>
-                                    <h3 class="menu-card-title">Sauerrahm & Käse</h3>
-                                    <p class="menu-card-description">
+                                    <span class="menu-card-category" data-de="Beliebt" data-en="Popular">Beliebt</span>
+                                    <h3 class="menu-card-title" data-de="Sauerrahm & Käse" data-en="Sour Cream & Cheese">Sauerrahm & Käse</h3>
+                                    <p class="menu-card-description" data-de="Cremiger Sauerrahm und herzhafter Käse auf knusprigem Knoblauch-Lángos." data-en="Creamy sour cream and savory cheese on crispy garlic Lángos.">
                                         Cremiger Sauerrahm und herzhafter Käse auf knusprigem Knoblauch-Lángos.
                                     </p>
                                     <div class="menu-card-footer">
@@ -193,7 +205,7 @@
                                 <div class="menu-card-content">
                                     <span class="menu-card-category">🇨🇭 Special</span>
                                     <h3 class="menu-card-title">Swiss Special</h3>
-                                    <p class="menu-card-description">
+                                    <p class="menu-card-description" data-de="Appenzeller Käse, knuspriger Speck, Sauerrahm und frischer Schnittlauch." data-en="Appenzeller cheese, crispy bacon, sour cream and fresh chives.">
                                         Appenzeller Käse, knuspriger Speck, Sauerrahm und frischer Schnittlauch.
                                     </p>
                                     <div class="menu-card-footer">
@@ -209,9 +221,9 @@
                                     <img src="images/langos-marille.jpeg" alt="Lángos mit Bio Marillen-Marmelade">
                                 </div>
                                 <div class="menu-card-content">
-                                    <span class="menu-card-category">Süss</span>
-                                    <h3 class="menu-card-title">Bio Marille</h3>
-                                    <p class="menu-card-description">
+                                    <span class="menu-card-category" data-de="Süss" data-en="Sweet">Süss</span>
+                                    <h3 class="menu-card-title" data-de="Bio Marille" data-en="Organic Apricot">Bio Marille</h3>
+                                    <p class="menu-card-description" data-de="Warmer Lángos mit feinster Bio-Marillen Marmelade." data-en="Warm Lángos with finest organic apricot jam.">
                                         Warmer Lángos mit feinster Bio-Marillen Marmelade.
                                     </p>
                                     <div class="menu-card-footer">
@@ -227,9 +239,9 @@
                                     <img src="images/langos-pflaume.jpeg" alt="Lángos mit Bio Pflaumen-Marmelade">
                                 </div>
                                 <div class="menu-card-content">
-                                    <span class="menu-card-category">Süss</span>
-                                    <h3 class="menu-card-title">Bio Pflaume</h3>
-                                    <p class="menu-card-description">
+                                    <span class="menu-card-category" data-de="Süss" data-en="Sweet">Süss</span>
+                                    <h3 class="menu-card-title" data-de="Bio Pflaume" data-en="Organic Plum">Bio Pflaume</h3>
+                                    <p class="menu-card-description" data-de="Süss-säuerliche Bio-Pflaumen-Marmelade auf knusprigem Lángos." data-en="Sweet and tangy organic plum jam on crispy Lángos.">
                                         Süss-säuerliche Bio-Pflaumen-Marmelade auf knusprigem Lángos.
                                     </p>
                                     <div class="menu-card-footer">
@@ -245,9 +257,9 @@
                                     <img src="images/langos-schoko.jpeg" alt="Bio Lángos mit Haselnuss-Nougat Creme">
                                 </div>
                                 <div class="menu-card-content">
-                                    <span class="menu-card-category">Süss</span>
-                                    <h3 class="menu-card-title">Bio Schoko-Nuss</h3>
-                                    <p class="menu-card-description">
+                                    <span class="menu-card-category" data-de="Süss" data-en="Sweet">Süss</span>
+                                    <h3 class="menu-card-title" data-de="Bio Schoko-Nuss" data-en="Organic Choco-Nut">Bio Schoko-Nuss</h3>
+                                    <p class="menu-card-description" data-de="Cremige Haselnuss-Nougat Creme, bestäubt mit feinem Puderzucker." data-en="Creamy hazelnut-nougat cream, dusted with fine powdered sugar.">
                                         Cremige Haselnuss-Nougat Creme, bestäubt mit feinem Puderzucker.
                                     </p>
                                     <div class="menu-card-footer">
@@ -265,13 +277,13 @@
                             <!-- Bananen-Trauben-Spiess (links) -->
                             <article class="menu-card">
                                 <div class="menu-card-image">
-                                    <div class="menu-card-badge">Weihnachtsspecial</div>
+                                    <div class="menu-card-badge" data-de="Weihnachtsspecial" data-en="Christmas Special">Weihnachtsspecial</div>
                                     <img src="images/bannane_traube.jpeg" alt="Bananen-Trauben-Spiess mit belgischer Schokolade">
                                 </div>
                                 <div class="menu-card-content">
-                                    <span class="menu-card-category">Süss</span>
-                                    <h3 class="menu-card-title">Bananen-Trauben-Spiess</h3>
-                                    <p class="menu-card-description">
+                                    <span class="menu-card-category" data-de="Süss" data-en="Sweet">Süss</span>
+                                    <h3 class="menu-card-title" data-de="Bananen-Trauben-Spiess" data-en="Banana-Grape Skewer">Bananen-Trauben-Spiess</h3>
+                                    <p class="menu-card-description" data-de="Banane und Trauben am Spiess, getaucht in feinste belgische Schokolade." data-en="Banana and grapes on a skewer, dipped in finest Belgian chocolate.">
                                         Banane und Trauben am Spiess, getaucht in feinste belgische Schokolade.
                                     </p>
                                     <div class="menu-card-footer">
@@ -284,13 +296,13 @@
                             <!-- Erdbeerspiess (mitte) -->
                             <article class="menu-card">
                                 <div class="menu-card-image">
-                                    <div class="menu-card-badge">Weihnachtsspecial</div>
+                                    <div class="menu-card-badge" data-de="Weihnachtsspecial" data-en="Christmas Special">Weihnachtsspecial</div>
                                     <img src="images/erdbeer.jpeg" alt="Erdbeerspiess mit belgischer Schokolade">
                                 </div>
                                 <div class="menu-card-content">
-                                    <span class="menu-card-category">Süss</span>
-                                    <h3 class="menu-card-title">Erdbeerspiess</h3>
-                                    <p class="menu-card-description">
+                                    <span class="menu-card-category" data-de="Süss" data-en="Sweet">Süss</span>
+                                    <h3 class="menu-card-title" data-de="Erdbeerspiess" data-en="Strawberry Skewer">Erdbeerspiess</h3>
+                                    <p class="menu-card-description" data-de="Saftige Erdbeeren am Spiess, übergossen mit feinster belgischer Schokolade." data-en="Juicy strawberries on a skewer, drizzled with finest Belgian chocolate.">
                                         Saftige Erdbeeren am Spiess, übergossen mit feinster belgischer Schokolade.
                                     </p>
                                     <div class="menu-card-footer">
@@ -303,13 +315,13 @@
                             <!-- Erdbeer-Trauben-Spiess (rechts) -->
                             <article class="menu-card">
                                 <div class="menu-card-image">
-                                    <div class="menu-card-badge">Weihnachtsspecial</div>
+                                    <div class="menu-card-badge" data-de="Weihnachtsspecial" data-en="Christmas Special">Weihnachtsspecial</div>
                                     <img src="images/erdbeer_traube.jpeg" alt="Erdbeer-Trauben-Spiess mit belgischer Schokolade">
                                 </div>
                                 <div class="menu-card-content">
-                                    <span class="menu-card-category">Süss</span>
-                                    <h3 class="menu-card-title">Erdbeer-Trauben-Spiess</h3>
-                                    <p class="menu-card-description">
+                                    <span class="menu-card-category" data-de="Süss" data-en="Sweet">Süss</span>
+                                    <h3 class="menu-card-title" data-de="Erdbeer-Trauben-Spiess" data-en="Strawberry-Grape Skewer">Erdbeer-Trauben-Spiess</h3>
+                                    <p class="menu-card-description" data-de="Erdbeeren und Trauben vereint, umhüllt von belgischer Schokolade." data-en="Strawberries and grapes united, coated in Belgian chocolate.">
                                         Erdbeeren und Trauben vereint, umhüllt von belgischer Schokolade.
                                     </p>
                                     <div class="menu-card-footer">
@@ -325,7 +337,7 @@
             <!-- Weihnachtsspecial Button -->
             <div class="menu-toggle-btn-wrapper">
                 <button class="btn-primary btn-toggle-menu" id="menuToggleBtn">
-                    <span class="btn-toggle-text">Weihnachtsspecial</span>
+                    <span class="btn-toggle-text" data-de="Weihnachtsspecial" data-en="Christmas Special" data-de-alt="Zurück zum Menü" data-en-alt="Back to Menu">Weihnachtsspecial</span>
                     <span class="btn-toggle-icon">→</span>
                 </button>
             </div>
@@ -337,15 +349,15 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-content fade-up">
-                    <h2 class="about-title">
+                    <h2 class="about-title" data-de="Die <em>Geschichte</em><br>hinter dem Geschmack" data-en="The <em>Story</em><br>behind the Taste">
                         Die <em>Geschichte</em><br>hinter dem Geschmack
                     </h2>
-                    <p class="about-text">
+                    <p class="about-text" data-de="Lángos ist ein traditionelles ungarisches Fladenbrot, das frisch frittiert und warm serviert wird. Seit Generationen wird es auf Märkten und Festivals in Ungarn genossen – und jetzt auch hier in Vaduz!" data-en="Lángos is a traditional Hungarian flatbread that is freshly fried and served warm. For generations, it has been enjoyed at markets and festivals in Hungary – and now here in Vaduz!">
                         Lángos ist ein traditionelles ungarisches Fladenbrot, das frisch frittiert und
                         warm serviert wird. Seit Generationen wird es auf Märkten und Festivals in
                         Ungarn genossen – und jetzt auch hier in Vaduz!
                     </p>
-                    <p class="about-text">
+                    <p class="about-text" data-de="Wir verwenden nur hochwertige Zutaten und bereiten jeden Lángos frisch vor deinen Augen zu. Knusprig von aussen, fluffig von innen – so muss ein echter Lángos sein." data-en="We use only premium ingredients and prepare each Lángos fresh before your eyes. Crispy on the outside, fluffy on the inside – that's how a real Lángos should be.">
                         Wir verwenden nur hochwertige Zutaten und bereiten jeden Lángos frisch vor
                         deinen Augen zu. Knusprig von aussen, fluffig von innen – so muss ein
                         echter Lángos sein.
@@ -354,19 +366,19 @@
                     <div class="about-features">
                         <div class="about-feature">
                             <div class="about-feature-icon">🥣</div>
-                            <span class="about-feature-text">Frisch zubereitet</span>
+                            <span class="about-feature-text" data-de="Frisch zubereitet" data-en="Freshly Prepared">Frisch zubereitet</span>
                         </div>
                         <div class="about-feature">
                             <div class="about-feature-icon">🌿</div>
-                            <span class="about-feature-text">Hochwertige Zutaten</span>
+                            <span class="about-feature-text" data-de="Hochwertige Zutaten" data-en="Premium Ingredients">Hochwertige Zutaten</span>
                         </div>
                         <div class="about-feature">
                             <div class="about-feature-icon">🇭🇺</div>
-                            <span class="about-feature-text">Original Rezept</span>
+                            <span class="about-feature-text" data-de="Original Rezept" data-en="Original Recipe">Original Rezept</span>
                         </div>
                         <div class="about-feature">
                             <div class="about-feature-icon">❤️</div>
-                            <span class="about-feature-text">Mit Liebe gemacht</span>
+                            <span class="about-feature-text" data-de="Mit Liebe gemacht" data-en="Made with Love">Mit Liebe gemacht</span>
                         </div>
                     </div>
                 </div>
@@ -377,7 +389,7 @@
                     </div>
                     <div class="about-badge">
                         <span class="about-badge-number">100%</span>
-                        <span class="about-badge-text">Handgemacht</span>
+                        <span class="about-badge-text" data-de="Handgemacht" data-en="Handmade">Handgemacht</span>
                     </div>
                 </div>
             </div>
@@ -388,9 +400,9 @@
     <section id="drinks" class="section section-dark">
         <div class="container">
             <div class="section-header fade-up">
-                <span class="section-badge">Getränke</span>
-                <h2 class="section-title">Dazu <em>passend</em></h2>
-                <p class="section-description">
+                <span class="section-badge" data-de="Getränke" data-en="Drinks">Getränke</span>
+                <h2 class="section-title" data-de="Dazu <em>passend</em>" data-en="Perfect <em>Pairing</em>">Dazu <em>passend</em></h2>
+                <p class="section-description" data-de="Kalt oder heiss – die perfekte Ergänzung zu deinem Lángos" data-en="Cold or hot – the perfect complement to your Lángos">
                     Kalt oder heiss – die perfekte Ergänzung zu deinem Lángos
                 </p>
             </div>
@@ -401,7 +413,7 @@
                     <div class="drink-card-top">
                         <img src="images/rivella.png" alt="Rivella" class="drink-icon-img">
                         <h3 class="drink-card-title">Rivella</h3>
-                        <p class="drink-card-desc">Das Schweizer Original, erfrischend anders.</p>
+                        <p class="drink-card-desc" data-de="Das Schweizer Original, erfrischend anders." data-en="The Swiss original, refreshingly different.">Das Schweizer Original, erfrischend anders.</p>
                     </div>
                     <div class="drink-card-bottom">
                         <span class="drink-card-price">CHF 3.50</span>
@@ -412,7 +424,7 @@
                     <div class="drink-card-top">
                         <img src="images/sinalco.png" alt="Sinalco" class="drink-icon-img">
                         <h3 class="drink-card-title">Sinalco</h3>
-                        <p class="drink-card-desc">Der Klassiker mit dem unverkennbaren Geschmack.</p>
+                        <p class="drink-card-desc" data-de="Der Klassiker mit dem unverkennbaren Geschmack." data-en="The classic with the unmistakable taste.">Der Klassiker mit dem unverkennbaren Geschmack.</p>
                     </div>
                     <div class="drink-card-bottom">
                         <span class="drink-card-price">CHF 3.50</span>
@@ -423,7 +435,7 @@
                     <div class="drink-card-top">
                         <img src="images/pellegrino_aranciata.png" alt="Sanpellegrino Aranciata" class="drink-icon-img">
                         <h3 class="drink-card-title">Sanpellegrino</h3>
-                        <p class="drink-card-desc">Italienische Aranciata mit echtem Orangensaft.</p>
+                        <p class="drink-card-desc" data-de="Italienische Aranciata mit echtem Orangensaft." data-en="Italian Aranciata with real orange juice.">Italienische Aranciata mit echtem Orangensaft.</p>
                     </div>
                     <div class="drink-card-bottom">
                         <span class="drink-card-price">CHF 3.50</span>
@@ -436,8 +448,8 @@
                 <div class="drink-card drink-card-vertical drink-card-hot fade-up">
                     <div class="drink-card-top">
                         <img src="images/tee.jpeg" alt="Tee" class="drink-img-hot">
-                        <h3 class="drink-card-title">Tee</h3>
-                        <p class="drink-card-desc">Aromatischer Tee, wärmend und wohltuend.</p>
+                        <h3 class="drink-card-title" data-de="Tee" data-en="Tea">Tee</h3>
+                        <p class="drink-card-desc" data-de="Aromatischer Tee, wärmend und wohltuend." data-en="Aromatic tea, warming and soothing.">Aromatischer Tee, wärmend und wohltuend.</p>
                     </div>
                     <div class="drink-card-bottom">
                         <span class="drink-card-price">CHF 3.50</span>
@@ -447,8 +459,8 @@
                 <div class="drink-card drink-card-vertical drink-card-hot fade-up">
                     <div class="drink-card-top">
                         <img src="images/hot_schoggi.jpeg" alt="Heisse Schoggi" class="drink-img-hot">
-                        <h3 class="drink-card-title">Heisse Schoggi</h3>
-                        <p class="drink-card-desc">Mit feinster belgischer Schokolade.</p>
+                        <h3 class="drink-card-title" data-de="Heisse Schoggi" data-en="Hot Chocolate">Heisse Schoggi</h3>
+                        <p class="drink-card-desc" data-de="Mit feinster belgischer Schokolade." data-en="With finest Belgian chocolate.">Mit feinster belgischer Schokolade.</p>
                     </div>
                     <div class="drink-card-bottom">
                         <span class="drink-card-price">CHF 8.–</span>
@@ -459,7 +471,7 @@
                     <div class="drink-card-top">
                         <img src="images/kaffee.jpeg" alt="Cappuccino" class="drink-img-hot">
                         <h3 class="drink-card-title">Cappuccino</h3>
-                        <p class="drink-card-desc">Cremig aufgeschäumt, auf Wunsch sanft oder kräftig.</p>
+                        <p class="drink-card-desc" data-de="Cremig aufgeschäumt, auf Wunsch sanft oder kräftig." data-en="Creamily frothed, mild or strong on request.">Cremig aufgeschäumt, auf Wunsch sanft oder kräftig.</p>
                     </div>
                     <div class="drink-card-bottom">
                         <span class="drink-card-price">CHF 4.50</span>
@@ -473,33 +485,33 @@
     <section id="location" class="section section-cream">
         <div class="container">
             <div class="section-header fade-up">
-                <span class="section-badge">Standort</span>
-                <h2 class="section-title">Besuch <em>uns</em></h2>
-                <p class="section-description">
+                <span class="section-badge" data-de="Standort" data-en="Location">Standort</span>
+                <h2 class="section-title" data-de="Besuch <em>uns</em>" data-en="Visit <em>Us</em>">Besuch <em>uns</em></h2>
+                <p class="section-description" data-de="Besuche uns am Weihnachtsmarkt im Vaduzer Städtle" data-en="Visit us at the Christmas market in Vaduz Städtle">
                     Besuche uns am Weihnachtsmarkt im Vaduzer Städtle
                 </p>
             </div>
 
             <div class="location-card fade-up">
                 <div class="location-icon">🎄</div>
-                <h3 class="location-title">Weihnachtsmarkt Vaduz</h3>
-                <p class="location-address">Vaduzer Städtle, Stand H</p>
+                <h3 class="location-title" data-de="Weihnachtsmarkt Vaduz" data-en="Christmas Market Vaduz">Weihnachtsmarkt Vaduz</h3>
+                <p class="location-address" data-de="Vaduzer Städtle, Stand H" data-en="Vaduz Städtle, Stand H">Vaduzer Städtle, Stand H</p>
 
                 <div class="location-hours">
-                    <div class="location-hours-title">Öffnungszeiten</div>
+                    <div class="location-hours-title" data-de="Öffnungszeiten" data-en="Opening Hours">Öffnungszeiten</div>
                     <div class="location-hours-item location-hours-stacked">
-                        <span class="location-day">Samstag, 13.12.2025</span>
+                        <span class="location-day" data-de="Samstag, 13.12.2025" data-en="Saturday, 13.12.2025">Samstag, 13.12.2025</span>
                         <span class="location-time">11:00–19:00 Uhr</span>
                     </div>
                     <div class="location-hours-item location-hours-stacked">
-                        <span class="location-day">Sonntag, 14.12.2025</span>
+                        <span class="location-day" data-de="Sonntag, 14.12.2025" data-en="Sunday, 14.12.2025">Sonntag, 14.12.2025</span>
                         <span class="location-time">11:00–17:00 Uhr</span>
                     </div>
                 </div>
 
                 <a href="https://maps.google.com/?q=Städtle+Vaduz" target="_blank" rel="noopener" class="btn-primary">
                     <span>📍</span>
-                    <span>Route planen</span>
+                    <span data-de="Route planen" data-en="Get Directions">Route planen</span>
                 </a>
             </div>
         </div>
@@ -547,11 +559,11 @@
                     </a>
                 </div>
 
-                <p class="footer-text">© 2025 Lángos uf Tour. Alle Rechte vorbehalten.</p>
+                <p class="footer-text" data-de="© 2025 Lángos uf Tour. Alle Rechte vorbehalten." data-en="© 2025 Lángos uf Tour. All rights reserved.">© 2025 Lángos uf Tour. Alle Rechte vorbehalten.</p>
 
                 <div class="footer-links">
-                    <button class="footer-link" id="impressumBtn">Impressum</button>
-                    <button class="footer-link" id="datenschutzBtn">Datenschutz</button>
+                    <button class="footer-link" id="impressumBtn" data-de="Impressum" data-en="Imprint">Impressum</button>
+                    <button class="footer-link" id="datenschutzBtn" data-de="Datenschutz" data-en="Privacy">Datenschutz</button>
                 </div>
             </div>
         </div>
@@ -561,7 +573,7 @@
     <div class="modal-overlay" id="impressumModal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Schliessen">&times;</button>
-            <h2 class="modal-title">Impressum</h2>
+            <h2 class="modal-title" data-de="Impressum" data-en="Imprint">Impressum</h2>
             <div class="modal-body">
                 <p><strong>LAUNEX CORP. ESTABLISHMENT</strong></p>
                 <p>Matschils 23<br>9495 Triesen<br>Liechtenstein</p>
@@ -573,27 +585,27 @@
     <div class="modal-overlay" id="datenschutzModal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Schliessen">&times;</button>
-            <h2 class="modal-title">Datenschutzerklärung</h2>
+            <h2 class="modal-title" data-de="Datenschutzerklärung" data-en="Privacy Policy">Datenschutzerklärung</h2>
             <div class="modal-body">
-                <h3>1. Allgemeines</h3>
-                <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf unserer Website.</p>
+                <h3 data-de="1. Allgemeines" data-en="1. General">1. Allgemeines</h3>
+                <p data-de="Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf unserer Website." data-en="The protection of your personal data is important to us. This privacy policy informs you about the processing of personal data on our website.">Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten auf unserer Website.</p>
 
-                <h3>2. Keine Erhebung personenbezogener Daten</h3>
-                <p>Wir erheben, speichern und verarbeiten keine personenbezogenen Daten über diese Website. Es werden keine Cookies gesetzt, keine Tracking-Dienste verwendet und keine Formulardaten erfasst.</p>
+                <h3 data-de="2. Keine Erhebung personenbezogener Daten" data-en="2. No Collection of Personal Data">2. Keine Erhebung personenbezogener Daten</h3>
+                <p data-de="Wir erheben, speichern und verarbeiten keine personenbezogenen Daten über diese Website. Es werden keine Cookies gesetzt, keine Tracking-Dienste verwendet und keine Formulardaten erfasst." data-en="We do not collect, store or process any personal data through this website. No cookies are set, no tracking services are used and no form data is collected.">Wir erheben, speichern und verarbeiten keine personenbezogenen Daten über diese Website. Es werden keine Cookies gesetzt, keine Tracking-Dienste verwendet und keine Formulardaten erfasst.</p>
 
-                <h3>3. Server-Logs</h3>
-                <p>Beim Besuch unserer Website werden durch den Hosting-Anbieter automatisch technische Zugriffsdaten (Server-Logs) erfasst. Diese umfassen die IP-Adresse, Datum und Uhrzeit des Zugriffs sowie die aufgerufene Seite. Diese Daten werden ausschliesslich zur Sicherstellung des technischen Betriebs verwendet und nach kurzer Zeit automatisch gelöscht. Eine Zuordnung zu einzelnen Personen erfolgt nicht.</p>
+                <h3 data-de="3. Server-Logs" data-en="3. Server Logs">3. Server-Logs</h3>
+                <p data-de="Beim Besuch unserer Website werden durch den Hosting-Anbieter automatisch technische Zugriffsdaten (Server-Logs) erfasst. Diese umfassen die IP-Adresse, Datum und Uhrzeit des Zugriffs sowie die aufgerufene Seite. Diese Daten werden ausschliesslich zur Sicherstellung des technischen Betriebs verwendet und nach kurzer Zeit automatisch gelöscht. Eine Zuordnung zu einzelnen Personen erfolgt nicht." data-en="When visiting our website, the hosting provider automatically collects technical access data (server logs). These include the IP address, date and time of access, and the page accessed. This data is used exclusively to ensure technical operation and is automatically deleted after a short time. No assignment to individual persons takes place.">Beim Besuch unserer Website werden durch den Hosting-Anbieter automatisch technische Zugriffsdaten (Server-Logs) erfasst. Diese umfassen die IP-Adresse, Datum und Uhrzeit des Zugriffs sowie die aufgerufene Seite. Diese Daten werden ausschliesslich zur Sicherstellung des technischen Betriebs verwendet und nach kurzer Zeit automatisch gelöscht. Eine Zuordnung zu einzelnen Personen erfolgt nicht.</p>
 
-                <h3>4. Externe Links</h3>
-                <p>Unsere Website enthält Links zu externen Diensten (Google Maps, Instagram, WhatsApp). Für die Datenschutzpraktiken dieser Drittanbieter sind deren jeweilige Datenschutzerklärungen massgeblich.</p>
+                <h3 data-de="4. Externe Links" data-en="4. External Links">4. Externe Links</h3>
+                <p data-de="Unsere Website enthält Links zu externen Diensten (Google Maps, Instagram, WhatsApp). Für die Datenschutzpraktiken dieser Drittanbieter sind deren jeweilige Datenschutzerklärungen massgeblich." data-en="Our website contains links to external services (Google Maps, Instagram, WhatsApp). The respective privacy policies of these third-party providers apply to their data protection practices.">Unsere Website enthält Links zu externen Diensten (Google Maps, Instagram, WhatsApp). Für die Datenschutzpraktiken dieser Drittanbieter sind deren jeweilige Datenschutzerklärungen massgeblich.</p>
 
-                <h3>5. Ihre Rechte</h3>
-                <p>Da wir keine personenbezogenen Daten speichern, entfallen die üblichen Betroffenenrechte (Auskunft, Berichtigung, Löschung). Bei Fragen können Sie uns jederzeit kontaktieren.</p>
+                <h3 data-de="5. Ihre Rechte" data-en="5. Your Rights">5. Ihre Rechte</h3>
+                <p data-de="Da wir keine personenbezogenen Daten speichern, entfallen die üblichen Betroffenenrechte (Auskunft, Berichtigung, Löschung). Bei Fragen können Sie uns jederzeit kontaktieren." data-en="Since we do not store any personal data, the usual data subject rights (access, rectification, deletion) do not apply. If you have any questions, you can contact us at any time.">Da wir keine personenbezogenen Daten speichern, entfallen die üblichen Betroffenenrechte (Auskunft, Berichtigung, Löschung). Bei Fragen können Sie uns jederzeit kontaktieren.</p>
 
-                <h3>6. Kontakt</h3>
+                <h3 data-de="6. Kontakt" data-en="6. Contact">6. Kontakt</h3>
                 <p>LAUNEX CORP. ESTABLISHMENT<br>Matschils 23, 9495 Triesen</p>
 
-                <p class="modal-date">Stand: Dezember 2025</p>
+                <p class="modal-date" data-de="Stand: Dezember 2025" data-en="Last updated: December 2025">Stand: Dezember 2025</p>
             </div>
         </div>
     </div>

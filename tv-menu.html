@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=3840, height=2160">
+    <title>Lángos uf Tour - Menü</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #C41E3A;
+            --primary-dark: #9B1B30;
+            --gold: #D4A574;
+            --cream: #fae1c3;
+            --cream-light: #fcefde;
+            --dark: #1A1A1A;
+            --dark-light: #2D2D2D;
+        }
+
+        html, body {
+            width: 3840px;
+            height: 2160px;
+            overflow: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--cream);
+        }
+
+        .container {
+            width: 3840px;
+            height: 2160px;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 50px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--cream-light) 100%);
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--gold);
+            margin-bottom: 30px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--primary-red);
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 32px;
+            color: var(--gold);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr;
+            gap: 40px;
+            flex: 1;
+            min-height: 0;
+        }
+
+        /* Langos Section */
+        .langos-section {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-shrink: 0;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        .langos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 25px;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .langos-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .langos-card.bestseller::before {
+            content: 'BESTSELLER';
+            position: absolute;
+            top: 25px;
+            right: -40px;
+            background: var(--primary-red);
+            color: white;
+            padding: 10px 55px;
+            font-size: 20px;
+            font-weight: 700;
+            transform: rotate(45deg);
+            z-index: 10;
+            letter-spacing: 1px;
+        }
+
+        .langos-image-wrapper {
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .langos-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .langos-info {
+            padding: 20px 25px;
+            flex-shrink: 0;
+            background: white;
+        }
+
+        .langos-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .langos-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 38px;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .langos-price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--primary-red);
+            white-space: nowrap;
+        }
+
+        .langos-desc {
+            font-size: 22px;
+            color: var(--dark-light);
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .langos-allergens {
+            font-size: 18px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .langos-allergens strong {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .allergen-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            background: var(--cream);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* Sweet Badge */
+        .sweet-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 5;
+        }
+
+        /* Drinks Section */
+        .drinks-section {
+            background: linear-gradient(135deg, #3D2B1F 0%, #5a4a3a 100%);
+            border-radius: 24px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .drinks-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--cream-light);
+            margin-bottom: 25px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Drinks Grid Container */
+        .drinks-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 25px;
+            min-height: 0;
+        }
+
+        /* Hot Drinks */
+        .hot-drinks {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .drinks-subtitle {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .drinks-subtitle .icon {
+            font-size: 32px;
+        }
+
+        .hot-drinks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .hot-drink-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 14px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hot-drink-image-wrapper {
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .hot-drink-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hot-drink-info {
+            padding: 15px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .hot-drink-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--cream-light);
+            margin-bottom: 6px;
+        }
+
+        .hot-drink-price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* Cold Drinks */
+        .cold-drinks {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .cold-drinks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .cold-drink-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cold-drink-image-wrapper {
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+            background: rgba(255,255,255,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .cold-drink-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .cold-drink-info {
+            padding: 15px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .cold-drink-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--cream-light);
+            margin-bottom: 6px;
+        }
+
+        .cold-drink-price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* Allergen Legend */
+        .allergen-legend {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            flex-shrink: 0;
+        }
+
+        .allergen-legend-title {
+            font-size: 16px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .allergen-legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .allergen-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .allergen-legend-item .badge {
+            width: 24px;
+            height: 24px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">Lángos <span>uf Tour</span></div>
+            <div class="tagline">Authentische ungarische Köstlichkeiten</div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Langos Section -->
+            <section class="langos-section">
+                <h2 class="section-title">Unsere Lángos</h2>
+                <div class="langos-grid">
+                    <!-- Langos Natur -->
+                    <div class="langos-card">
+                        <div class="langos-image-wrapper">
+                            <img src="images/langos-natur.jpeg" alt="Lángos Natur" class="langos-image">
+                        </div>
+                        <div class="langos-info">
+                            <div class="langos-header">
+                                <h3 class="langos-name">Lángos Natur</h3>
+                                <span class="langos-price">CHF 8.–</span>
+                            </div>
+                            <p class="langos-desc">Knusprig frittiert mit Knoblauch und Meersalz</p>
+                            <div class="langos-allergens">
+                                <span class="allergen-badge">A</span>
+                                <span class="allergen-badge">B</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sauerrahm & Käse - Bestseller -->
+                    <div class="langos-card bestseller">
+                        <div class="langos-image-wrapper">
+                            <img src="images/langos-sauerrahm-kaese.jpeg" alt="Sauerrahm & Käse" class="langos-image">
+                        </div>
+                        <div class="langos-info">
+                            <div class="langos-header">
+                                <h3 class="langos-name">Sauerrahm & Käse</h3>
+                                <span class="langos-price">CHF 11.–</span>
+                            </div>
+                            <p class="langos-desc">Cremiger Sauerrahm und herzhafter Käse</p>
+                            <div class="langos-allergens">
+                                <span class="allergen-badge">A</span>
+                                <span class="allergen-badge">B</span>
+                                <span class="allergen-badge">C</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Swiss Special -->
+                    <div class="langos-card">
+                        <div class="langos-image-wrapper">
+                            <img src="images/langos-swiss-special.jpeg" alt="Swiss Special" class="langos-image">
+                        </div>
+                        <div class="langos-info">
+                            <div class="langos-header">
+                                <h3 class="langos-name">Swiss Special</h3>
+                                <span class="langos-price">CHF 13.–</span>
+                            </div>
+                            <p class="langos-desc">Appenzeller, Speck, Sauerrahm & Schnittlauch</p>
+                            <div class="langos-allergens">
+                                <span class="allergen-badge">A</span>
+                                <span class="allergen-badge">B</span>
+                                <span class="allergen-badge">C</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bio Marille -->
+                    <div class="langos-card">
+                        <span class="sweet-badge">Süss</span>
+                        <div class="langos-image-wrapper">
+                            <img src="images/langos-marille.jpeg" alt="Bio Marille" class="langos-image">
+                        </div>
+                        <div class="langos-info">
+                            <div class="langos-header">
+                                <h3 class="langos-name">Bio Marille</h3>
+                                <span class="langos-price">CHF 10.–</span>
+                            </div>
+                            <p class="langos-desc">Hausgemachte Bio-Marillen-Marmelade</p>
+                            <div class="langos-allergens">
+                                <span class="allergen-badge">A</span>
+                                <span class="allergen-badge">B</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bio Pflaume -->
+                    <div class="langos-card">
+                        <span class="sweet-badge">Süss</span>
+                        <div class="langos-image-wrapper">
+                            <img src="images/langos-pflaume.jpeg" alt="Bio Pflaume" class="langos-image">
+                        </div>
+                        <div class="langos-info">
+                            <div class="langos-header">
+                                <h3 class="langos-name">Bio Pflaume</h3>
+                                <span class="langos-price">CHF 10.–</span>
+                            </div>
+                            <p class="langos-desc">Süss-säuerliche Bio-Pflaumen-Marmelade</p>
+                            <div class="langos-allergens">
+                                <span class="allergen-badge">A</span>
+                                <span class="allergen-badge">B</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bio Schoko-Nuss -->
+                    <div class="langos-card">
+                        <span class="sweet-badge">Süss</span>
+                        <div class="langos-image-wrapper">
+                            <img src="images/langos-schoko.jpeg" alt="Bio Schoko-Nuss" class="langos-image">
+                        </div>
+                        <div class="langos-info">
+                            <div class="langos-header">
+                                <h3 class="langos-name">Bio Schoko-Nuss</h3>
+                                <span class="langos-price">CHF 10.–</span>
+                            </div>
+                            <p class="langos-desc">Haselnuss-Nougat Creme mit Puderzucker</p>
+                            <div class="langos-allergens">
+                                <span class="allergen-badge">A</span>
+                                <span class="allergen-badge">B</span>
+                                <span class="allergen-badge">C</span>
+                                <span class="allergen-badge">H</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drinks Section -->
+            <aside class="drinks-section">
+                <h2 class="drinks-title">Getränke</h2>
+
+                <div class="drinks-content">
+                    <!-- Hot Drinks -->
+                    <div class="hot-drinks">
+                        <h3 class="drinks-subtitle"><span class="icon">☕</span> Heissgetränke</h3>
+                        <div class="hot-drinks-grid">
+                            <div class="hot-drink-card">
+                                <div class="hot-drink-image-wrapper">
+                                    <img src="images/tee.jpeg" alt="Tee" class="hot-drink-image">
+                                </div>
+                                <div class="hot-drink-info">
+                                    <h4 class="hot-drink-name">Tee</h4>
+                                    <span class="hot-drink-price">CHF 3.50</span>
+                                </div>
+                            </div>
+                            <div class="hot-drink-card">
+                                <div class="hot-drink-image-wrapper">
+                                    <img src="images/kaffee.jpeg" alt="Kaffee" class="hot-drink-image">
+                                </div>
+                                <div class="hot-drink-info">
+                                    <h4 class="hot-drink-name">Kaffee</h4>
+                                    <span class="hot-drink-price">CHF 4.50</span>
+                                </div>
+                            </div>
+                            <div class="hot-drink-card">
+                                <div class="hot-drink-image-wrapper">
+                                    <img src="images/hot_schoggi.jpeg" alt="Heisse Schoggi" class="hot-drink-image">
+                                </div>
+                                <div class="hot-drink-info">
+                                    <h4 class="hot-drink-name">Heisse Schoggi</h4>
+                                    <span class="hot-drink-price">CHF 6.–</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cold Drinks -->
+                    <div class="cold-drinks">
+                        <h3 class="drinks-subtitle"><span class="icon">🧊</span> Kaltgetränke</h3>
+                        <div class="cold-drinks-grid">
+                            <div class="cold-drink-card">
+                                <div class="cold-drink-image-wrapper">
+                                    <img src="images/rivella.png" alt="Rivella" class="cold-drink-image">
+                                </div>
+                                <div class="cold-drink-info">
+                                    <h4 class="cold-drink-name">Rivella</h4>
+                                    <span class="cold-drink-price">CHF 3.50</span>
+                                </div>
+                            </div>
+                            <div class="cold-drink-card">
+                                <div class="cold-drink-image-wrapper">
+                                    <img src="images/sinalco.png" alt="Sinalco" class="cold-drink-image">
+                                </div>
+                                <div class="cold-drink-info">
+                                    <h4 class="cold-drink-name">Sinalco</h4>
+                                    <span class="cold-drink-price">CHF 3.50</span>
+                                </div>
+                            </div>
+                            <div class="cold-drink-card">
+                                <div class="cold-drink-image-wrapper">
+                                    <img src="images/pellegrino_aranciata.png" alt="Sanpellegrino" class="cold-drink-image">
+                                </div>
+                                <div class="cold-drink-info">
+                                    <h4 class="cold-drink-name">Sanpellegrino</h4>
+                                    <span class="cold-drink-price">CHF 3.50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Allergen Legend -->
+                <div class="allergen-legend">
+                    <div class="allergen-legend-title">Allergene</div>
+                    <div class="allergen-legend-items">
+                        <div class="allergen-legend-item">
+                            <span class="badge">A</span> Gluten
+                        </div>
+                        <div class="allergen-legend-item">
+                            <span class="badge">B</span> Milch
+                        </div>
+                        <div class="allergen-legend-item">
+                            <span class="badge">C</span> Laktose
+                        </div>
+                        <div class="allergen-legend-item">
+                            <span class="badge">H</span> Nüsse
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

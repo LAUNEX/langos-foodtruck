@@ -274,13 +274,25 @@
     function initAllergenPopups() {
         const allergenButtons = document.querySelectorAll('.allergen-info-btn');
 
-        // Allergen data mapping
+        // Allergen data mapping with translations
         const allergenInfo = {
-            'A': { code: 'A', name: 'Gluten', class: 'gluten' },
-            'B': { code: 'B', name: 'Ei', class: 'egg' },
-            'C': { code: 'C', name: 'Milch', class: 'milk' },
-            'H': { code: 'H', name: 'Nüsse', class: 'nuts' }
+            de: {
+                'A': { code: 'A', name: 'Gluten', class: 'gluten' },
+                'B': { code: 'B', name: 'Ei', class: 'egg' },
+                'C': { code: 'C', name: 'Milch', class: 'milk' },
+                'H': { code: 'H', name: 'Nüsse', class: 'nuts' }
+            },
+            en: {
+                'A': { code: 'A', name: 'Gluten', class: 'gluten' },
+                'B': { code: 'B', name: 'Egg', class: 'egg' },
+                'C': { code: 'C', name: 'Milk', class: 'milk' },
+                'H': { code: 'H', name: 'Nuts', class: 'nuts' }
+            }
         };
+
+        function getCurrentLang() {
+            return localStorage.getItem('langos-lang') || 'de';
+        }
 
 
         let activePopup = null;
@@ -309,15 +321,19 @@
             const popup = document.createElement('div');
             popup.className = 'allergen-popup';
 
+            // Get current language allergen info
+            const lang = getCurrentLang();
+            const langAllergens = allergenInfo[lang];
+
             // Create badges HTML
             const badgesHtml = allergens.map(code => {
-                const info = allergenInfo[code];
+                const info = langAllergens[code];
                 return `<span class="allergen-badge ${info.class}">${info.code}</span>`;
             }).join('');
 
             // Create legend text
             const legendText = allergens.map(code => {
-                const info = allergenInfo[code];
+                const info = langAllergens[code];
                 return `${info.code} = ${info.name}`;
             }).join(', ');
 
@@ -447,10 +463,28 @@
 
         if (!toggleBtn || !toggleContainer) return;
 
-        const langosDescription = 'Frisch zubereitet nach traditionellem ungarischem Rezept mit hochwertigen Zutaten';
-        const specialDescription = 'Mit feinster belgischer Schokolade übergossen – purer Genuss...';
+        const descriptions = {
+            de: {
+                langos: 'Frisch zubereitet nach traditionellem ungarischem Rezept mit hochwertigen Zutaten',
+                special: 'Mit feinster belgischer Schokolade übergossen – purer Genuss...',
+                btnSpecial: 'Weihnachtsspecial',
+                btnBack: 'Zurück zum Menü',
+                titleSpecial: 'Früchtespiesse'
+            },
+            en: {
+                langos: 'Freshly prepared according to traditional Hungarian recipe with premium ingredients',
+                special: 'Drizzled with finest Belgian chocolate – pure indulgence...',
+                btnSpecial: 'Christmas Special',
+                btnBack: 'Back to Menu',
+                titleSpecial: 'Fruit Skewers'
+            }
+        };
 
         let isShowingSpecial = false;
+
+        function getCurrentLang() {
+            return localStorage.getItem('langos-lang') || 'de';
+        }
 
         // Helper function to scroll to menu section (like header nav)
         function scrollToMenuSection() {
@@ -469,6 +503,8 @@
 
         toggleBtn.addEventListener('click', () => {
             isShowingSpecial = !isShowingSpecial;
+            const lang = getCurrentLang();
+            const texts = descriptions[lang];
 
             // Toggle state
             toggleContainer.classList.toggle('show-special', isShowingSpecial);
@@ -476,17 +512,17 @@
 
             // Update button text
             if (toggleBtnText) {
-                toggleBtnText.textContent = isShowingSpecial ? 'Zurück zum Menü' : 'Weihnachtsspecial';
+                toggleBtnText.textContent = isShowingSpecial ? texts.btnBack : texts.btnSpecial;
             }
 
             // Update section title
             if (menuTitleHighlight) {
-                menuTitleHighlight.textContent = isShowingSpecial ? 'Früchtespiesse' : 'Lángos';
+                menuTitleHighlight.textContent = isShowingSpecial ? texts.titleSpecial : 'Lángos';
             }
 
             // Update section description
             if (menuDescription) {
-                menuDescription.textContent = isShowingSpecial ? specialDescription : langosDescription;
+                menuDescription.textContent = isShowingSpecial ? texts.special : texts.langos;
             }
 
             // Scroll after fade transition
@@ -501,6 +537,111 @@
         document.addEventListener('DOMContentLoaded', initMenuToggle);
     } else {
         initMenuToggle();
+    }
+
+    // ============================================
+    // Language Switcher
+    // ============================================
+    function initLanguageSwitcher() {
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const htmlElement = document.documentElement;
+
+        // Get saved language or default to German
+        let currentLang = localStorage.getItem('langos-lang') || 'de';
+
+        // Apply initial language
+        applyLanguage(currentLang);
+        updateActiveButtons(currentLang);
+
+        // Add click handlers to all language buttons
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                if (lang !== currentLang) {
+                    currentLang = lang;
+                    localStorage.setItem('langos-lang', lang);
+                    updateActiveButtons(lang);
+
+                    // Fade to dark/beige overlay, change language, fade back
+                    document.body.classList.add('lang-switching');
+                    setTimeout(() => {
+                        applyLanguage(lang);
+                        setTimeout(() => {
+                            document.body.classList.remove('lang-switching');
+                        }, 50);
+                    }, 300);
+                }
+            });
+        });
+
+        function updateActiveButtons(lang) {
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+
+        function applyLanguage(lang) {
+            // Update html lang attribute
+            htmlElement.lang = lang;
+
+            // Find all elements with data-de and data-en attributes
+            const translatableElements = document.querySelectorAll('[data-de][data-en]');
+
+            translatableElements.forEach(el => {
+                const text = el.dataset[lang];
+                if (text) {
+                    // Check if element contains HTML
+                    if (text.includes('<')) {
+                        el.innerHTML = text;
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+
+            // Update menu toggle button text based on current state
+            const toggleBtnText = document.querySelector('.btn-toggle-text');
+            const toggleContainer = document.getElementById('menuToggleContainer');
+            if (toggleBtnText && toggleContainer) {
+                const isShowingSpecial = toggleContainer.classList.contains('show-special');
+                if (isShowingSpecial) {
+                    toggleBtnText.textContent = lang === 'de' ? 'Zurück zum Menü' : 'Back to Menu';
+                } else {
+                    toggleBtnText.textContent = lang === 'de' ? 'Weihnachtsspecial' : 'Christmas Special';
+                }
+            }
+
+            // Update menu description based on current state
+            const menuDescription = document.getElementById('menuDescription');
+            const menuToggleContainer = document.getElementById('menuToggleContainer');
+            if (menuDescription && menuToggleContainer) {
+                const isShowingSpecial = menuToggleContainer.classList.contains('show-special');
+                if (isShowingSpecial) {
+                    menuDescription.textContent = lang === 'de'
+                        ? 'Mit feinster belgischer Schokolade übergossen – purer Genuss...'
+                        : 'Drizzled with finest Belgian chocolate – pure indulgence...';
+                } else {
+                    menuDescription.textContent = lang === 'de'
+                        ? 'Frisch zubereitet nach traditionellem ungarischem Rezept mit hochwertigen Zutaten'
+                        : 'Freshly prepared according to traditional Hungarian recipe with premium ingredients';
+                }
+            }
+
+            // Update allergen names based on language
+            updateAllergenNames(lang);
+        }
+
+        function updateAllergenNames(lang) {
+            // This updates the allergen info for popups
+            window.currentLang = lang;
+        }
+    }
+
+    // Initialize language switcher when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+    } else {
+        initLanguageSwitcher();
     }
 
 })();
