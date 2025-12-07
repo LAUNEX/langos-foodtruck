@@ -396,6 +396,35 @@ body.menu-open .logo-text span {
     color: var(--color-primary);
 }
 
+.nav-mobile-social {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition-delay: 0.35s;
+}
+
+.nav-mobile.open .nav-mobile-social {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-mobile-social-icon {
+    width: 48px;
+    height: 48px;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.nav-mobile-social a:hover .nav-mobile-social-icon {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
 /* ============================================
    HERO SECTION
    ============================================ */
@@ -1211,32 +1240,28 @@ body.menu-open .logo-text span {
     gap: var(--space-sm);
 }
 
-.location-hours-item span:first-child {
-    flex-shrink: 0;
+.location-hours-item.location-hours-stacked {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.location-hours-item span:last-child {
+.location-hours-item.location-hours-stacked:last-child {
+    border-bottom: none;
+}
+
+.location-hours-stacked .location-day {
     font-weight: 600;
-    text-align: right;
-    white-space: nowrap;
+    font-size: 0.95rem;
 }
 
-@media (max-width: 380px) {
-    .location-hours-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: var(--space-sm) 0;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .location-hours-item:last-child {
-        border-bottom: none;
-    }
-
-    .location-hours-item span:last-child {
-        text-align: center;
-    }
+.location-hours-stacked .location-time {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-dark-light);
+    margin-top: 2px;
 }
 
 /* ============================================
