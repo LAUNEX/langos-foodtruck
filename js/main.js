@@ -7,6 +7,14 @@
     'use strict';
 
     // ============================================
+    // Scroll to Top on Page Load
+    // ============================================
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // ============================================
     // DOM Elements
     // ============================================
     const elements = {
