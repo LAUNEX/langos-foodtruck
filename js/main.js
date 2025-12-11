@@ -286,14 +286,12 @@
         const allergenInfo = {
             de: {
                 'A': { code: 'A', name: 'Gluten', class: 'gluten' },
-                'B': { code: 'B', name: 'Ei', class: 'egg' },
-                'C': { code: 'C', name: 'Milch', class: 'milk' },
+                'G': { code: 'G', name: 'Milch', class: 'milk' },
                 'H': { code: 'H', name: 'Nüsse', class: 'nuts' }
             },
             en: {
                 'A': { code: 'A', name: 'Gluten', class: 'gluten' },
-                'B': { code: 'B', name: 'Egg', class: 'egg' },
-                'C': { code: 'C', name: 'Milk', class: 'milk' },
+                'G': { code: 'G', name: 'Milk', class: 'milk' },
                 'H': { code: 'H', name: 'Nuts', class: 'nuts' }
             }
         };
@@ -333,14 +331,15 @@
             const lang = getCurrentLang();
             const langAllergens = allergenInfo[lang];
 
-            // Create badges HTML
-            const badgesHtml = allergens.map(code => {
+            // Create badges HTML (filter out unknown allergens)
+            const validAllergens = allergens.filter(code => langAllergens[code]);
+            const badgesHtml = validAllergens.map(code => {
                 const info = langAllergens[code];
                 return `<span class="allergen-badge ${info.class}">${info.code}</span>`;
             }).join('');
 
             // Create legend text
-            const legendText = allergens.map(code => {
+            const legendText = validAllergens.map(code => {
                 const info = langAllergens[code];
                 return `${info.code} = ${info.name}`;
             }).join(', ');
@@ -372,8 +371,8 @@
         });
 
         // Close popup when clicking outside
-        document.addEventListener('click', () => {
-            if (activePopup) {
+        document.addEventListener('click', (e) => {
+            if (activePopup && !e.target.closest('.allergen-info-btn') && !e.target.closest('.allergen-popup')) {
                 activePopup.remove();
                 activePopup = null;
             }
