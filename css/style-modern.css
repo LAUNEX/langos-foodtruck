@@ -1168,6 +1168,7 @@ body.menu-open .logo-text span {
 /* Hot drinks - larger images */
 .drink-card-hot {
     min-height: 320px;
+    position: relative;
 }
 
 .drink-img-hot {
@@ -1175,6 +1176,22 @@ body.menu-open .logo-text span {
     height: 220px;
     border-radius: var(--radius-md);
     object-fit: cover;
+}
+
+/* Soon Badge for drinks */
+.drink-card-badge-soon {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    padding: 4px 12px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius-sm);
+    z-index: 10;
 }
 
 /* Description text for drinks */
