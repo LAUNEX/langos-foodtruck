@@ -474,14 +474,14 @@
             de: {
                 langos: 'Frisch zubereitet nach traditionellem ungarischem Rezept mit hochwertigen Zutaten',
                 special: 'Mit feinster belgischer Schokolade übergossen – purer Genuss...',
-                btnSpecial: 'Weihnachtsspecial',
+                btnSpecial: 'Für unsere Schokoliebhaber',
                 btnBack: 'Zurück zum Menü',
                 titleSpecial: 'Früchtespiesse'
             },
             en: {
                 langos: 'Freshly prepared according to traditional Hungarian recipe with premium ingredients',
                 special: 'Drizzled with finest Belgian chocolate – pure indulgence...',
-                btnSpecial: 'Christmas Special',
+                btnSpecial: 'For our chocolate lovers',
                 btnBack: 'Back to Menu',
                 titleSpecial: 'Fruit Skewers'
             }
@@ -614,7 +614,7 @@
                 if (isShowingSpecial) {
                     toggleBtnText.textContent = lang === 'de' ? 'Zurück zum Menü' : 'Back to Menu';
                 } else {
-                    toggleBtnText.textContent = lang === 'de' ? 'Weihnachtsspecial' : 'Christmas Special';
+                    toggleBtnText.textContent = lang === 'de' ? 'Für unsere Schokoliebhaber' : 'For our chocolate lovers';
                 }
             }
 

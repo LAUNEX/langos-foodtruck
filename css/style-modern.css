@@ -370,6 +370,11 @@ body.menu-open .logo-text span {
         margin-bottom: var(--space-md);
         width: fit-content;
     }
+
+    .lang-toggle-hero .lang-btn {
+        padding: 7px 15px;
+        font-size: 0.95rem;
+    }
 }
 
 /* Mobile Menu Button */
