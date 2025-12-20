@@ -1145,6 +1145,27 @@ body.menu-open .logo-text span {
     object-fit: contain;
 }
 
+/* Multiple drink images in a row */
+.drink-images-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.drink-icon-img-small {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    border-radius: var(--radius-lg);
+}
+
+.drink-images-row-3 .drink-icon-img-small {
+    height: 90px;
+}
+
 .drink-card-top .drink-card-title {
     margin-bottom: 0;
 }
