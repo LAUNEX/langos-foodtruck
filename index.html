@@ -34,6 +34,7 @@
                     <a href="#menu" class="nav-link" data-de="Menü" data-en="Menu">Menü</a>
                     <a href="#about" class="nav-link" data-de="Über uns" data-en="About">Über uns</a>
                     <a href="#drinks" class="nav-link" data-de="Getränke" data-en="Drinks">Getränke</a>
+                    <a href="#booking" class="nav-link" data-de="Buche uns" data-en="Book us">Buche uns</a>
                     <a href="#location" class="nav-link" data-de="Standort" data-en="Location">Standort</a>
                     <!-- Telefon temporär ausgeblendet
                     <a href="tel:+41791234567" class="btn-cta">
@@ -67,6 +68,7 @@
             <a href="#menu" class="nav-mobile-link" data-de="Menü" data-en="Menu">Menü</a>
             <a href="#about" class="nav-mobile-link" data-de="Über uns" data-en="About">Über uns</a>
             <a href="#drinks" class="nav-mobile-link" data-de="Getränke" data-en="Drinks">Getränke</a>
+            <a href="#booking" class="nav-mobile-link" data-de="Buche uns" data-en="Book us">Buche uns</a>
             <a href="#location" class="nav-mobile-link" data-de="Standort" data-en="Location">Standort</a>
             <!-- Telefon temporär ausgeblendet
             <a href="tel:+41791234567" class="nav-mobile-link">Anrufen</a>
@@ -505,23 +507,55 @@
                 </p>
             </div>
 
-            <div class="location-card fade-up">
-                <div class="location-icon">📍</div>
-                <h3 class="location-title" data-de="Neuer Standort" data-en="New Location">Neuer Standort</h3>
-                <p class="location-address" data-de="Wird bald bekannt gegeben" data-en="To be announced">Wird bald bekannt gegeben</p>
+            <div class="location-cards-container">
+                <!-- Buchungs Kachel -->
+                <div id="booking" class="booking-card fade-up">
+                    <div class="booking-icon">🎉</div>
+                    <h3 class="booking-title" data-de="Jetzt buchen" data-en="Book now">Jetzt buchen</h3>
+                    <p class="booking-description" data-de="Authentischer ungarischer Lángos für deinen besonderen Anlass. Wir kommen zu dir!" data-en="Authentic Hungarian Lángos for your special occasion. We come to you!">
+                        Authentischer ungarischer Lángos für deinen besonderen Anlass. Wir kommen zu dir!
+                    </p>
 
-                <div class="location-hours">
-                    <div class="location-hours-title" data-de="Bleib informiert" data-en="Stay informed">Bleib informiert</div>
-                    <div class="location-hours-item location-hours-stacked">
-                        <span class="location-day" data-de="Folge uns auf Instagram" data-en="Follow us on Instagram">Folge uns auf Instagram</span>
-                        <span class="location-time">@langos.li</span>
+                    <div class="booking-types">
+                        <div class="booking-type">
+                            <span class="booking-type-icon">💒</span>
+                            <span data-de="Hochzeiten" data-en="Weddings">Hochzeiten</span>
+                        </div>
+                        <div class="booking-type">
+                            <span class="booking-type-icon">🏢</span>
+                            <span data-de="Firmenevents" data-en="Corporate Events">Firmenevents</span>
+                        </div>
+                        <div class="booking-type">
+                            <span class="booking-type-icon">🎈</span>
+                            <span data-de="Private Feiern" data-en="Private Parties">Private Feiern</span>
+                        </div>
                     </div>
+
+                    <a href="https://www.instagram.com/langos.li/" target="_blank" rel="noopener" class="btn-primary">
+                        <span>✉️</span>
+                        <span data-de="Anfrage senden" data-en="Send inquiry">Anfrage senden</span>
+                    </a>
                 </div>
 
-                <a href="https://www.instagram.com/langos.li/" target="_blank" rel="noopener" class="btn-primary">
-                    <span>📸</span>
-                    <span data-de="Zu Instagram" data-en="Go to Instagram">Zu Instagram</span>
-                </a>
+                <!-- Standort Kachel -->
+                <div id="location-card" class="location-card fade-up">
+                    <div class="location-icon">📍</div>
+                    <h3 class="location-title" data-de="Neuer Standort" data-en="New Location">Neuer Standort</h3>
+                    <p class="location-address" data-de="Wird bald bekannt gegeben" data-en="To be announced">Wird bald bekannt gegeben</p>
+
+                    <div class="location-hours">
+                        <div class="location-hours-title" data-de="Bleib informiert" data-en="Stay informed">Bleib informiert</div>
+                        <div class="location-hours-item location-hours-stacked">
+                            <span class="location-day" data-de="Folge uns auf Instagram" data-en="Follow us on Instagram">Folge uns auf Instagram</span>
+                            <span class="location-time">@langos.li</span>
+                        </div>
+                    </div>
+
+                    <a href="https://www.instagram.com/langos.li/" target="_blank" rel="noopener" class="btn-primary">
+                        <span>📸</span>
+                        <span data-de="Zu Instagram" data-en="Go to Instagram">Zu Instagram</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
