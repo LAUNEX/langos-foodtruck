@@ -140,10 +140,14 @@
                     const isMobile = window.innerWidth < 992;
                     let scrollTarget = section;
 
-                    // For menu section, scroll to the crest image
+                    // For menu section, scroll to the crest image and reset to Lángos
                     if (href === '#menu') {
                         const crest = section.querySelector('.section-crest');
                         if (crest) scrollTarget = crest;
+                        // Reset menu to show Lángos (not Früchtespiesse)
+                        if (typeof window.resetMenuToLangos === 'function') {
+                            window.resetMenuToLangos();
+                        }
                     }
                     // For drinks section, scroll to the section badge
                     else if (href === '#drinks') {
@@ -492,6 +496,37 @@
         function getCurrentLang() {
             return localStorage.getItem('langos-lang') || 'de';
         }
+
+        // Reset menu to Lángos (not special)
+        function resetMenuToLangos() {
+            if (!isShowingSpecial) return; // Already showing Lángos
+
+            isShowingSpecial = false;
+            const lang = getCurrentLang();
+            const texts = descriptions[lang];
+
+            // Reset state
+            toggleContainer.classList.remove('show-special');
+            toggleBtn.classList.remove('active');
+
+            // Update button text
+            if (toggleBtnText) {
+                toggleBtnText.textContent = texts.btnSpecial;
+            }
+
+            // Update section title
+            if (menuTitleHighlight) {
+                menuTitleHighlight.textContent = 'Lángos';
+            }
+
+            // Update section description
+            if (menuDescription) {
+                menuDescription.textContent = texts.langos;
+            }
+        }
+
+        // Make reset function globally available
+        window.resetMenuToLangos = resetMenuToLangos;
 
         // Helper function to scroll to menu section (like header nav)
         function scrollToMenuSection() {
